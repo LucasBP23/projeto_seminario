@@ -36,7 +36,7 @@
     
 <header class="topo">
     <div class="logo">
-        <img src="Images/UniSGE.png" alt="Logo" class="logo">
+        <img src="../images/UniSGE.png" alt="Logo" class="logo">
     </div>
 
 

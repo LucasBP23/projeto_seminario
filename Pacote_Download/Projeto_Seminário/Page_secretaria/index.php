@@ -25,7 +25,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/x-icon" href="Images/UniSGE-removebg-preview.png"> <!--Coloca o logo no topo da guia da página-->
+    <link rel="icon" type="image/x-icon" href="../images/UniSGE.png"> <!--Coloca o logo no topo da guia da página-->
     
 
      <!-- Do google icones -->

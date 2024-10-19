@@ -1,0 +1,366 @@
+body{
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+
+}
+
+.topo_fundo{
+        position: fixed;
+        background: url('images/fundo_area_login.jpg') no-repeat;
+        /* background: linear-gradient(to right, rgb(13, 104, 60), rgb(0, 8, 0)); */
+        width: 100%;
+        height: 40%;
+        background-attachment: fixed;
+        top: 0;
+        left: 0;
+}
+
+
+
+.topo{
+    position: fixed;
+    /* background: linear-gradient(to right, rgb(13, 104, 60), rgb(0, 8, 0)); */
+    width: 100%;
+    height: 80px;
+    background-attachment: fixed;
+    text-align: center;
+    top: 0;
+    left: 0;
+    padding: 20px 1px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box; /* Garante que padding e largura sejam considerados corretamente */
+    border-bottom: 3px groove rgba(73, 161, 168, 0.2);
+    
+}
+
+.logo {
+    user-select: none;
+    width: 45PX;
+    margin-left: 80px;
+   
+}
+
+
+.navigation{
+    
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+   
+}
+
+.navigation a {
+    position: relative;
+    font-size: 1.1em;
+    color: #005095;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+    
+}
+
+
+
+.login1{
+    position: absolute;
+    z-index: 10;
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* alinha verticalmente */
+    height: 100vh; /*altura da div*/
+   
+
+}
+
+.block_login1{
+    position: absolute;
+    z-index: 10;
+    height: 450px;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* alinha verticalmente */
+    /* border: 3px solid rgb(179, 16, 16); */
+    border-end-start-radius: 15%;
+    border-start-end-radius: 15%;
+    text-align: center;
+   
+    backdrop-filter: blur(20px); /* deixa embaçado*/
+     box-shadow: 0 0 30px rgba(0, 0, 0, .5); 
+}
+
+
+.block_login1 a{
+    display: inline-block;
+    color: white;
+}
+
+.login2{
+    position: absolute;
+    z-index: 10;
+    color: black;
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* alinha verticalmente */
+    height: 100vh; /*altura da div*/
+    margin-left: 33%;
+}
+
+.block_login2{
+    position: absolute;
+    z-index: 10;
+    color: black;
+    height: 450px;
+    width: 75%;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* alinha verticalmente */
+    /* border: 3px solid rgba(23, 140, 175, 0.849); */
+    border-end-start-radius: 15%;
+    border-start-end-radius: 15%;
+    text-align: center;
+   
+    backdrop-filter: blur(20px); /* deixa embaçado*/
+     box-shadow: 0 0 30px rgba(0, 0, 0, .5); 
+}
+
+
+
+.login3{
+    position: absolute;
+    z-index: 10;
+    color: black;
+    width: 33%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* alinha verticalmente */
+    height: 100vh; /*altura da div*/
+    
+    margin-left: 66%;
+}
+.block_login3{
+    position: absolute;
+    z-index: 10;
+    color: black;
+    height: 450px;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* alinha verticalmente */
+    /* border: 3px solid rgb(147, 152, 152); */
+    border-end-start-radius: 15%;
+    border-start-end-radius: 15%;
+    text-align: center;
+   
+    backdrop-filter: blur(20px); /* deixa embaçado*/
+     box-shadow: 0 0 30px rgba(0, 0, 0, .5); 
+   
+}
+.login1 h1{
+    color: rgb(0, 0, 0);
+}
+
+
+.img_estudante{
+    
+    width: 200px;
+    height: 200px;
+    position: relative;
+    margin-top: 30px;
+    z-index: 10;  
+    padding: 0px;
+    /* max-width: 100%; Garantir que a imagem se ajuste bem */
+    
+
+}
+.img_secretaria{
+    
+    width: 200px;
+    height: 200px;
+    position: relative;
+    margin-top: 30px;
+    z-index: 10;  
+
+    overflow: visible; /* Permite que o pseudo-elemento maior transborde */
+    /* max-width: 100%; Garantir que a imagem se ajuste bem */ 
+}
+
+
+.img_secretaria img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    /* Ajusta a imagem para preencher o contêiner sem distorção */
+    position: relative;
+    z-index: 1; /* Garante que a imagem fique acima do pseudo-elemento */
+}
+
+.img_secretaria::before {
+    content: '';
+    position: absolute;
+    top: -20%; /* Ajusta a posição do fundo em relação à imagem */
+    left: -20%;
+    width: 140%; /* Faz o fundo ser maior que a imagem */
+    height: 140%;
+    background: rgb(179, 16, 16);
+    border-radius: 50%;
+    /* padding: 0px; Ajusta o tamanho do pseudo-elemento */
+    z-index: -1; /* Coloca o fundo atrás da imagem */
+}
+
+.img_professor{
+    
+    width: 200px;
+    height: 200px;
+    position: relative;
+    margin-top: 30px;
+    z-index: 10;  
+
+    overflow: visible; /* Permite que o pseudo-elemento maior transborde */
+    /* max-width: 100%; Garantir que a imagem se ajuste bem */ 
+}
+
+.img_professor img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    /* Ajusta a imagem para preencher o contêiner sem distorção */
+    object-position: center top; /* Posiciona a imagem de forma que a parte de cima fique visível */
+    position: relative;
+    z-index: 1; /* Garante que a imagem fique acima do pseudo-elemento */
+}
+
+.img_professor::before {
+    content: '';
+    position: absolute;
+    top: -20%; /* Ajusta a posição do fundo em relação à imagem */
+    left: -20%;
+    width: 140%; /* Faz o fundo ser maior que a imagem */
+    height: 140%;
+    background: rgba(23, 140, 175, 0.849);
+    border-radius: 50%;
+    /* padding: 0px; Ajusta o tamanho do pseudo-elemento */
+    z-index: -1; /* Coloca o fundo atrás da imagem */
+}
+
+.img_estudante{
+    
+    width: 200px;
+    height: 200px;
+    position: relative;
+    margin-top: 30px;
+    z-index: 10;  
+
+    overflow: visible; /* Permite que o pseudo-elemento maior transborde */
+    /* max-width: 100%; Garantir que a imagem se ajuste bem */ 
+}
+
+
+.img_estudante img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    /* Ajusta a imagem para preencher o contêiner sem distorção */
+    
+    position: relative;
+    z-index: 1; /* Garante que a imagem fique acima do pseudo-elemento */
+}
+
+.img_estudante::before {
+    content: '';
+    position: absolute;
+    top: -20%; /* Ajusta a posição do fundo em relação à imagem */
+    left: -20%;
+    width: 140%; /* Faz o fundo ser maior que a imagem */
+    height: 140%;
+    background: rgb(147, 152, 152);
+    border-radius: 50%;
+    /* padding: 0px; Ajusta o tamanho do pseudo-elemento */
+    z-index: -1; /* Coloca o fundo atrás da imagem */
+}
+
+.btn_login{
+    display: inline-block;
+    border: 3px solid rgb(16, 122, 16);
+    padding: 15px 51px; /* padding-top, padding-right, padding-bottom, padding-left */
+    background: rgb(16, 122, 16);
+    color: white;
+    border-radius: 8px;
+    margin-top: 50px; 
+    text-decoration: none;
+    
+}
+.btn_login:hover{
+    display: inline-block;
+    border: 3px solid rgb(16, 122, 16);
+    padding: 15px 51px; /* padding-top, padding-right, padding-bottom, padding-left */
+    background: white;
+    color: rgb(16, 122, 16);
+    border-radius: 8px;
+    margin-top: 50px; 
+    text-decoration: none;
+    
+}
+
+.btn_login_secretaria{
+    display: inline-block;
+    border: 3px solid rgb(16, 122, 16);
+    padding: 15px 51px;
+    background: rgb(16, 122, 16);
+    color: white;
+    border-radius: 8px;
+    text-decoration: none; /* Remove o sublinhado */
+}
+
+.btn_login_secretaria:hover{
+    display: inline-block;
+    border: 3px solid rgb(16, 122, 16);
+    padding: 15px 51px;
+    background: white;
+    color: rgb(16, 122, 16);
+    border-radius: 8px;
+    text-decoration: none; /* Remove o sublinhado */
+}
+
+.btn_container{
+    margin-top: 50px;
+    display: flex;
+    gap: 10px; /* Espaçamento entre os botões */
+}
+
+
+
+
+
+/* .block_login1 {
+    position: relative;
+    width: 400px;
+    height: 440px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px; 
+    backdrop-filter: blur(20px); 
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.block_login1   .form-box {
+    width: 100%;
+    padding: 40px;
+} */

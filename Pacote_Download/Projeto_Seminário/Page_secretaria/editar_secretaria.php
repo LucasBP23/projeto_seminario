@@ -14,7 +14,7 @@
     $result = $conexao->query($sqlSelect);
 
     //Teste
-    print_r($result);
+    // print_r($result);
 
     // Teste para verificar se tem mais de de uma linha
     if($result->num_rows > 0)
@@ -68,7 +68,7 @@
     <title>Document</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="icon" type="image/x-icon" href="Images/UniSGE-removebg-preview.png"> <!--Coloca o logo no topo da guia da página-->
-    <link rel="stylesheet" href="edit_secretaria.css">
+    <link rel="stylesheet" href="editar_secretaria.css">
    
       
         

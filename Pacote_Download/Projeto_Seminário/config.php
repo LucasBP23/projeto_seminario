@@ -2,7 +2,7 @@
     $dbHost = 'Localhost';
     $dbUsername = 'root';
     $dbPassword = '';
-    $dbName = 'seminario';
+    $dbName = 'projeto_unisge';
 
     
     $conexao = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);

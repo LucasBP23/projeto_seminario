@@ -60,17 +60,8 @@ delete
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Nome da Instituição</th>
-                    <th scope="col">CNPJ ou código MEC</th>
                     <th scope="col">Email</th>
                     <th scope="col">Telefone</th>
-                    <th scope="col">Tipo de mantenedora</th>
-                    <th scope="col">Tipo de instituição</th>
-                    <th scope="col">Cidade</th>
-                    <th scope="col">Estado</th>
-                    <th scope="col">Logradouro</th>
-                    <th scope="col">Número</th>
-                    <th scope="col">Bairro</th>
-                    <th scope="col">Complemento</th>
                     <th scope="col">Senha</th>
                     <th scope="col">...</th>
                 </tr>
@@ -82,18 +73,9 @@ delete
                         echo "<tr>";
                         echo "<td>".$user_data['id_instituicao']."</td>";
                         echo "<td>".$user_data['instituicao_nome']."</td>";
-                        echo "<td>".$user_data['instituicao_codigo']."</td>";
                         echo "<td>".$user_data['instituicao_email']."</td>";
                         echo "<td>".$user_data['instituicao_telefone']."</td>";
-                        echo "<td>".$user_data['mantenedora']."</td>";
-                        echo "<td>".$user_data['tipo_instituicao']."</td>";
-                        echo "<td>".$user_data['instituicao_cidade']."</td>";
-                        echo "<td>".$user_data['instituicao_estado']."</td>";
-                        echo "<td>".$user_data['instituicao_logradouro']."</td>";
-                        echo "<td>".$user_data['instituicao_numero']."</td>";
-                        echo "<td>".$user_data['instituicao_bairro']."</td>";
-                        echo "<td>".$user_data['instituicao_complemento']."</td>";
-                        echo "<td>".$user_data['instituicao_senha']."</td>";
+                        echo "<td>".$user_data['instituicao_senha_acesso']."</td>";
                         echo "<td>
                         <a class='icon_editar' href='editar_secretaria.php?id_instituicao=$user_data[id_instituicao]'>  $icon_editar 
                         </a>

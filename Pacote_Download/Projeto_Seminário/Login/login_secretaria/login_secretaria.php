@@ -41,7 +41,7 @@
                     <span class="icon">
                         <ion-icon name="lock-closed-outline"></ion-icon>
                     </span>
-                    <input type="password" name="instituicao_senha" id="instituicao_senha" required>
+                    <input type="password" name="instituicao_senha_acesso" id="instituicao_senha_acesso" required>
                     <label>Senha</label>
                 </div>
                 <div class="remember-forgot">
@@ -57,7 +57,6 @@
         </div>
     </div>
 
-        <script src="script.js"> </script> <!--Link com java script???-->
 
     <!--código para inserir icones do seguinte site: https://ionic.io/ionicons/usage-->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script> 

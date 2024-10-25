@@ -58,15 +58,13 @@ html, body {
    z-index: 3;
 } 
 
-.caixa_form{
-    padding: 3px;
-    border-radius: 5px;
-}
 
 
 
 .inputBox{
     position: relative;
+    margin-left: 2%;
+
 }
 
 .inputUser{
@@ -98,8 +96,8 @@ html, body {
 .inputUser:focus ~ .labelInput,
 .inputUser:valid ~ .labelInput {
     top: -20px;
-    font-size: 13px;
-    color: #895F5E;
+    
+    color: black;
     font-weight: bold;
 }
 
@@ -108,15 +106,15 @@ html, body {
 .coluna-50l{
     display: inline-block;
     /* float: left; */
-    width: 47.5%;
-    
+    width: 48.5%;
+    margin-left: 1%;
 }
 
 .coluna-50r{
     display: inline-block;
     /* float: right; */
-    width: 47.5%;
-    margin-left: 2.05%; 
+    width: 48.5%;
+    /* margin-left: 1%;  */
 }
 
 
@@ -134,7 +132,7 @@ html, body {
 
 #submit{
     background: #9fc1cc;
-    width: 100%;
+    width: 95%;
     border: 2px solid rgb(9, 19, 140);
     padding: 10px;
     color: white;
@@ -142,6 +140,9 @@ html, body {
     font-weight: bold;
     cursor: pointer;
     border-radius: 22px;
+    display: block;  
+    margin: 0 auto;  
+
 }
 #submit:hover{
     background:  #063444;

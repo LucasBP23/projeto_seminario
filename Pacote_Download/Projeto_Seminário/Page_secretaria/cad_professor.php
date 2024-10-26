@@ -1,6 +1,4 @@
 
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -57,7 +55,7 @@
                     <section class="coluna-50r">
                     <div class="inputBox">
                     <label for="professor_cidade" > <b>Cidade: </b> </label>
-                    <select id="professor_cidade" name="professor_cidade" class="inputUser" disabled required>
+                    <select id="professor_cidade" name="professor_cidade" class="inputUser" required>
                     <option value="">Selecione uma cidade</option>
                     </select>
                     </div>
@@ -76,12 +74,12 @@
                 
         
 
-                    <div class="inputBox">
+                    <!-- <div class="inputBox">
 
                         <input type="password" name="professor_senha_acesso" id="professor_senha_acesso" class="inputUser" required>
                         <label for="professor_senha_acesso"class="labelInput">Senha: </label>
                     </div>
-                    <br><br>
+                    <br><br> -->
 
                     
     
@@ -96,6 +94,6 @@
 
 
 
-    <script src="cad_professor.js?v=1.1"></script>
+    <script src="cad_professor.js?v=1.3"></script>
 </body>
 </html>

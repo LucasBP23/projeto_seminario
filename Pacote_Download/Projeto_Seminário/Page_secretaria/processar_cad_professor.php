@@ -8,35 +8,6 @@ session_start();
     // primeiro tem que verificar um por um:
     {
 
-        //TESTE PARA VER SE ESTÁ FUNCIONANDO
-        // print_r('Nome: '.$_POST['nome']);
-        // print_r("<br>");
-        // print_r('CPF: '.$_POST['cpf']);
-        // print_r("<br>");
-        // print_r('Email: ' . $_POST['email']);
-        // print_r("<br>");
-        // print_r('Telefone: ' . $_POST['telefone']);
-        // print_r("<br>");
-        // print_r('Sexo: ' . $_POST['genero']);
-        // print_r("<br>");
-        // print_r('Data de nascimento: ' . $_POST['nascimento']);
-        // print_r("<br>");
-        // print_r('Matéria: ' . $_POST['materia']);
-        // print_r("<br>");
-        // print_r('Titularidade máxima: ' . $_POST['titulacao_max']);
-        // print_r("<br>");
-        // print_r('Cidade: ' . $_POST['cidade']);
-        // print_r("<br>");
-        // print_r('Estado: ' . $_POST['estado']);
-        // print_r("<br>");
-        // print_r('Logradouro: ' . $_POST['logradouro']);
-        // print_r("<br>");
-        // print_r('Bairro: ' . $_POST['bairro']);
-        // print_r("<br>");
-        // print_r('Complemento: ' . $_POST['complemento']);
-       
-
-   
     
       //Incluindo a conexão com o arquivo config.php que faz conexão com o banco de dados
       include_once('../config.php');
@@ -49,37 +20,75 @@ if (!isset($_SESSION['id_instituicao'])) {
     exit();
 }     
 
-    //Transformando os input em variáveis
-    $nome = $_POST['nome'];
-    $cpf = $_POST['cpf'];
-    $email = $_POST['email'];
-    $telefone = $_POST['telefone'];
-    $genero =  $_POST['sexo'];
-    $data_nasc = $_POST['nascimento'];
-    $materia = $_POST['materia'];
-    $titulacao_max = $_POST['titulacao_max'];
-    $cidade = $_POST['cidade'];
-    $estado = $_POST['estado'];
-    $logradouro = $_POST['logradouro'];
-    $numero = $_POST['numero'];
-    $bairro = $_POST['bairro'];
-    $complemento = $_POST['complemento'];
-    $professor_senha = $_POST['professor_senha'];
+ // Função para gerar uma senha aleatória
+ function gerarSenha($tamanho = 8) {
+    $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&*'; // Caracteres permitidos
+    return substr(str_shuffle(str_repeat($chars, ceil($tamanho / strlen($chars)))), 1, $tamanho); // Gera senha aleatória
+}
+
+ //Transformando os input em variáveis
+ $professor_nome_completo = $_POST['professor_nome_completo'];
+ $professor_data_nascimento = $_POST['professor_data_nascimento'];
+ $professor_cpf = $_POST['professor_cpf'];
+ $professor_estado = $_POST['professor_estado'];
+ $professor_cidade = $_POST['professor_cidade'];
+ $professor_endereco = $_POST['professor_endereco'];
+ $professor_matricula = str_pad(rand(0, 999999), 6, '0', STR_PAD_LEFT); // Gera matrícula aleatória
+ $professor_senha = gerarSenha();
+ $professor_senha_hash = password_hash($professor_senha, PASSWORD_DEFAULT); // Hash da senha
 
 // Capturar o id_instituicao da sessão
 $id_instituicao = $_SESSION['id_instituicao'];
 
-    $result = mysqli_query($conexao, "INSERT INTO professor (nome, cpf, email, telefone, sexo, nascimento, materia, titulacao_max, cidade, estado, logradouro, numero, bairro, complemento, professor_senha, id_instituicao) VALUES ('$nome','$cpf', '$email', '$telefone', '$genero', '$data_nasc', '$materia', '$titulacao_max', '$cidade', '$estado', '$logradouro', '$numero', '$bairro', '$complemento','$professor_senha', '$id_instituicao')");  // $conexao é do arquivo config.php, depois fical igual ao insert into do banco de dados, primeiro o comando, depois a tabela, depois as colunas, depois os valores.
+
+ // Verificar se o CPF já existe no banco de dados
+ $verifica_cpf = "SELECT * FROM professor WHERE professor_cpf = '$professor_cpf'";
+ $resultado = mysqli_query($conexao, $verifica_cpf);
+
+  //TESTE PARA VER SE ESTÁ FUNCIONANDO
+//   print_r('Nome: '.$_POST['professor_nome_completo']);
+//   print_r("<br>");
+//   print_r('Data de nascimento: '.$_POST['professor_data_nascimento']);
+//   print_r("<br>");
+//   print_r('CPF: ' . $_POST['professor_cpf']);
+//   print_r("<br>");
+//   print_r('Estado: ' . $_POST['professor_estado']);
+//   print_r("<br>");
+//   print_r('Cidade: ' . $_POST['professor_cidade']);
+//   print_r("<br>");
+//   print_r('Endereço: ' . $_POST['professor_endereco']);
+//   print_r("<br>");
+//   print_r('Matrícula: ' . $professor_matricula);
+ 
+//   print_r("<br>");
+//   print_r('Senha: ' . $professor_senha);
+//   print_r("<br>");
+//   print_r('Senha hash: ' . $professor_senha_hash);
+//   print_r("<br>");
 
 
 
-// Verificar se o professor foi inserido corretamente
-if ($result) {
-    echo "Professor(a) cadastrado com sucesso!";
-    // Redirecionar para uma página, se necessário
-    // header("Location: listar_professores.php");
+if (mysqli_num_rows($resultado) > 0) {
+    echo "<script>
+            alert('Erro: CPF já cadastrado!');
+            window.location='cad_professor.php';
+          </script>";
 } else {
-    echo "Erro ao cadastrar o(a) professor(a): " . mysqli_error($conexao);
+// $conexao é do arquivo config.php, depois fical igual ao insert into do banco de dados, primeiro o comando, depois a tabela, depois as colunas, depois os valores.
+$query = "INSERT INTO professor (professor_nome_completo, professor_data_nascimento, professor_cpf, professor_estado, professor_cidade, professor_endereco, professor_matricula, professor_senha_acesso, id_instituicao) VALUES ('$professor_nome_completo', '$professor_data_nascimento', '$professor_cpf', '$professor_estado', '$professor_cidade', '$professor_endereco', '$professor_matricula', '$professor_senha_hash', '$id_instituicao')";
+
+
+//  // Verificar se o professor foi inserido corretamente
+if (mysqli_query($conexao, $query)) {
+    // echo "<script>alert('Usuário não encontrado.');</script>"; // Mensagem de erro
+    echo "<script>alert('Professor(a) cadastrado com sucesso! Matrícula: $professor_matricula, Senha: $professor_senha'); window.location='cad_professor.php'</script>";
+//     // Redirecionar para uma página, se necessário
+//     // header("Location: listar_professores.php");
+} else {
+    echo "<script>alert('Erro ao cadastrar o(a) professor(a): " . mysqli_error($conexao). " '); window.location='cad_professor'</script>";
+
+}
+
 }
 
 }

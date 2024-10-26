@@ -57,19 +57,19 @@ delete
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Nome</th>
-                    <th scope="col">CPF</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Telefone</th>
-                    <th scope="col">Sexo</th>
                     <th scope="col">Data de nascimento</th>
-                    <th scope="col">Materia</th>
-                    <th scope="col">Titulação máxima</th>
+                    <th scope="col">CPF</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">Cidade</th>
+                    <th scope="col">Endereço</th>
+                    <th scope="col">Matricula</th>
+                    <!-- <th scope="col">Titulação máxima</th>
                     <th scope="col">Cidade</th>
                     <th scope="col">Estado</th>
                     <th scope="col">Logradouro</th>
                     <th scope="col">Número</th>
                     <th scope="col">Bairro</th>
-                    <th scope="col">Complemento</th>
+                    <th scope="col">Complemento</th> -->
                     <th scope="col">Senha</th>
                     <th scope="col">Id instituição</th>
                     <th scope="col">...</th>
@@ -81,21 +81,21 @@ delete
                     {
                         echo "<tr>";
                         echo "<td>".$user_data['id_professor']."</td>";
-                        echo "<td>".$user_data['nome']."</td>";
-                        echo "<td>".$user_data['cpf']."</td>";
-                        echo "<td>".$user_data['email']."</td>";
-                        echo "<td>".$user_data['telefone']."</td>";
-                        echo "<td>".$user_data['sexo']."</td>";
-                        echo "<td>".$user_data['nascimento']."</td>";
-                        echo "<td>".$user_data['materia']."</td>";
-                        echo "<td>".$user_data['titulacao_max']."</td>";
-                        echo "<td>".$user_data['cidade']."</td>";
-                        echo "<td>".$user_data['estado']."</td>";
-                        echo "<td>".$user_data['logradouro']."</td>";
-                        echo "<td>".$user_data['numero']."</td>";
-                        echo "<td>".$user_data['bairro']."</td>";
-                        echo "<td>".$user_data['complemento']."</td>";
-                        echo "<td>".$user_data['professor_senha']."</td>";
+                        echo "<td>".$user_data['professor_nome_completo']."</td>";
+                        echo "<td>".$user_data['professor_data_nascimento']."</td>";
+                        echo "<td>".$user_data['professor_cpf']."</td>";
+                        echo "<td>".$user_data['professor_estado']."</td>";
+                        echo "<td>".$user_data['professor_cidade']."</td>";
+                        echo "<td>".$user_data['professor_endereco']."</td>";
+                        echo "<td>".$user_data['professor_matricula']."</td>";
+                        // echo "<td>".$user_data['titulacao_max']."</td>";
+                        // echo "<td>".$user_data['cidade']."</td>";
+                        // echo "<td>".$user_data['estado']."</td>";
+                        // echo "<td>".$user_data['logradouro']."</td>";
+                        // echo "<td>".$user_data['numero']."</td>";
+                        // echo "<td>".$user_data['bairro']."</td>";
+                        // echo "<td>".$user_data['complemento']."</td>";
+                        echo "<td>".$user_data['professor_senha_acesso']."</td>";
                         echo "<td>".$user_data['id_instituicao']."</td>";
                         echo "<td>
                         <a class='icon_editar' href='editar_professor.php?id_professor=$user_data[id_professor]'>  $icon_editar 

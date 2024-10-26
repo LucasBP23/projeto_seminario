@@ -25,7 +25,7 @@ function carregarCidades(estadoId) {
         .then(cidades => {
             cidades.forEach(cidade => {
                 let option = document.createElement('option');
-                option.value = cidade.id;
+                option.value = cidade.nome;
                 option.text = cidade.nome;
                 cidadeSelect.add(option);
             });
@@ -40,7 +40,7 @@ document.getElementById('professor_estado').addEventListener('change', function(
     if (estadoId) {
         carregarCidades(estadoId);
     } else {
-        document.getElementById('professor_cidade').disabled = true; // Ajustado para professor_cidade
+        document.getElementById('professor_cidade').disabled = true; 
         document.getElementById('professor_cidade').innerHTML = '<option value="">Selecione uma cidade</option>';
     }
 });

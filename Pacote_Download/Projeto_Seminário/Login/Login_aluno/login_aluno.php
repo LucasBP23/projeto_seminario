@@ -23,7 +23,7 @@
     </header>
 
    <div class="wrapper">
-        <span class="icon-close"><ion-icon name="close-circle-outline"></ion-icon></span>
+       
         <div class="form-box login">
            <h2>Login</h2> <!--Botão central-->
            <form action="#">
@@ -56,4 +56,3 @@
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
-<!--Parei no minuto 15:00    -->

@@ -107,23 +107,7 @@ header {
     padding: 40px;
 }
 
-/*Botão de X*/
-.wrapper .icon-close {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 45px;
-    height: 45px;
-    background: #08016a;
-    font-size: 2em;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-bottom-left-radius: 20PX;
-    z-index: 1;
-    
-}
+
 
 .form-box h2 {
     font-size: 2em;

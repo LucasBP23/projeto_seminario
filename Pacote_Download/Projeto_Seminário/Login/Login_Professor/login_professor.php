@@ -25,26 +25,27 @@
     </header>
 
    <div class="wrapper">
-        <span class="icon-close"><ion-icon name="close-circle-outline"></ion-icon></span>
         <div class="form-box login">
            <h2>Login</h2> <!--Botão central-->
-           <form action="#">
+           <form action="teste_login_professor.php" method="post">
                 <div class="input-box">
                     <span class="icon">
                         <ion-icon name="mail"></ion-icon>
                     </span>
-                    <input type="email" required>
-                    <label>Email</label>
+                    <input type="number" name="professor_matricula" id="professor_matricula" required>
+                    <label for="professor_matricula">Matricula</label>
                 </div>
                 <div class="input-box">
                     <span class="icon">
                         <ion-icon name="lock-closed-outline"></ion-icon>
                     </span>
-                    <input type="password" required>
-                    <label>Senha</label>
+                    <input type="password" name="professor_senha_acesso" id="professor_senha_acesso" required>
+                    <label for="professor_senha_acesso">Senha</label>
                 </div>
+
+                <input type="submit" class="btn" id="submit" name="submit" value="Login">
                 
-        <button type="submit" class="btn">Login</button>
+    
         <div class="sem_conta">
             <p>Não tem uma conta? <strong>Entre em contato com a secretaria.</strong></p>
         </div>
@@ -58,4 +59,3 @@
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
-<!--Parei no minuto 15:00    -->

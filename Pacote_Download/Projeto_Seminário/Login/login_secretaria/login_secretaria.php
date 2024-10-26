@@ -26,7 +26,7 @@
     </header>
 
    <div class="wrapper">
-        <span class="icon-close"><ion-icon name="close-circle-outline"></ion-icon></span>
+       
         <div class="form-box login">
            <h2>Login</h2> <!--Botão central-->
            <form action="../../teste_login.php" method="post">
@@ -49,11 +49,11 @@
                     <a href="#">Esqueceu a senha?</a>
                 </div>
                 <input type="submit" class="btn" id="submit" name="submit" value="Login">
-
+                </form>
         <div class="login-register">
             <p>Não tem uma conta?<a href="../../Cadastro_secretaria/cad_secretaria.php" class="register-link">  Cadastra-se.</a></p>
         </div>
-        </form>
+        
         </div>
     </div>
 
@@ -63,4 +63,3 @@
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
-<!--Parei no minuto 15:00    -->

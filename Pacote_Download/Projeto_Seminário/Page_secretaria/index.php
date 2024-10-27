@@ -70,7 +70,7 @@
         <a href="aluno/cad_aluno.php" target="iframe-menu">  Cadastrar aluno </a>
         <br>
         <hr>
-        <a href="edit_aluno.html" target="iframe-menu"><ion-icon name="pencil-outline"></ion-icon>Editar aluno</a>
+        <a href="aluno/edit_aluno.php" target="iframe-menu"><ion-icon name="pencil-outline"></ion-icon>Editar aluno</a>
         <br>
         <hr>
         <!-- <a href="Cad_turma.html"><ion-icon name="add-circle-outline"></ion-icon> Cadastrar turma</a>

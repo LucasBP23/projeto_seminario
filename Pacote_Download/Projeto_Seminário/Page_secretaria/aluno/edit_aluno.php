@@ -8,7 +8,7 @@ if (!isset($_SESSION['instituicao_email'])) {
 }//teste
 
 
-    include_once('../config.php');
+    include_once('../../config.php');
 
     $id_instituicao = $_SESSION['id_instituicao']; //teste
 

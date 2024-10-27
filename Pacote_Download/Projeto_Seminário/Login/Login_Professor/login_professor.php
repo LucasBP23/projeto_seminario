@@ -29,11 +29,12 @@
            <h2>Login</h2> <!--Botão central-->
            <form action="teste_login_professor.php" method="post">
                 <div class="input-box">
+                
                     <span class="icon">
-                        <ion-icon name="mail"></ion-icon>
+                    <ion-icon name="person-circle-sharp"></ion-icon>
                     </span>
                     <input type="number" name="professor_matricula" id="professor_matricula" required>
-                    <label for="professor_matricula">Matricula</label>
+                    <label for="professor_matricula">Matrícula</label>
                 </div>
                 <div class="input-box">
                     <span class="icon">

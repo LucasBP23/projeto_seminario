@@ -67,7 +67,7 @@
         <a href="edit_professor.php" target="iframe-menu">Editar Professor</a>
         <br>
         <hr>
-        <a href="cad_aluno.html" target="iframe-menu">  Cadastrar aluno </a>
+        <a href="aluno/cad_aluno.php" target="iframe-menu">  Cadastrar aluno </a>
         <br>
         <hr>
         <a href="edit_aluno.html" target="iframe-menu"><ion-icon name="pencil-outline"></ion-icon>Editar aluno</a>

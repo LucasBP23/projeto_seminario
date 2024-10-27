@@ -85,7 +85,7 @@ if (mysqli_query($conexao, $query)) {
 //     // Redirecionar para uma página, se necessário
 //     // header("Location: listar_professores.php");
 } else {
-    echo "<script>alert('Erro ao cadastrar o(a) professor(a): " . mysqli_error($conexao). " '); window.location='cad_professor'</script>";
+    echo "<script>alert('Erro ao cadastrar o(a) professor(a): " . mysqli_error($conexao). " '); window.location='cad_professor.php'</script>";
 
 }
 

@@ -26,23 +26,23 @@
        
         <div class="form-box login">
            <h2>Login</h2> <!--Botão central-->
-           <form action="#">
+           <form action="teste_login_aluno.php"  method="post">
                 <div class="input-box">
                     <span class="icon">
-                        <ion-icon name="mail"></ion-icon>
+                    <ion-icon name="person-circle-sharp"></ion-icon>
                     </span>
-                    <input type="email" required>
-                    <label>Email</label>
+                    <input type="number" id="aluno_matricula" name="aluno_matricula" required>
+                    <label for="aluno_matricula">Matrícula</label>
                 </div>
                 <div class="input-box">
                     <span class="icon">
                         <ion-icon name="lock-closed-outline"></ion-icon>
                     </span>
-                    <input type="password" required>
-                    <label>Senha</label>
+                    <input type="password" id="aluno_senha_acesso" name="aluno_senha_acesso" required>
+                    <label for="aluno_senha_acesso">Senha</label>
                 </div>
-                
-        <button type="submit" class="btn">Login</button>
+         
+        <input type="submit" class="btn" id="submit" name="submit" value="Login">
         <div class="sem_conta">
             <p>Não tem uma conta? <strong>Entre em contato com a secretaria.</strong></p>
         </div>

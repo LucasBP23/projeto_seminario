@@ -26,12 +26,23 @@
     $instituicao_telefone = $_POST['instituicao_telefone'];
     $instituicao_senha_acesso = $_POST['instituicao_senha_acesso'];
 
+    // Verifica se o e-mail já existe
+    $verificaEmail = mysqli_query($conexao, "SELECT * FROM secretaria WHERE instituicao_email = '$instituicao_email'");
 
-    $result = mysqli_query($conexao, "INSERT INTO secretaria (instituicao_nome, instituicao_email, instituicao_telefone, instituicao_senha_acesso) VALUES ('$instituicao_nome', '$instituicao_email', '$instituicao_telefone', '$instituicao_senha_acesso')");  // $conexao é do arquivo config.php, depois fical igual ao insert into do banco de dados, primeiro o comando, depois a tabela, depois as colunas, depois os valores.
 
-    header('Location: ../Login/login_secretaria/login_secretaria.php');
+    if (mysqli_num_rows($verificaEmail) > 0) {
+        // E-mail já existe
+        echo "Este e-mail já está cadastrado.";
+        echo "<script>alert('Este e-mail já está cadastrado.'); window.location='cad_secretaria.php'</script>";
+    } else {
+        // E-mail não existe, então insere o novo registro
+        $result = mysqli_query($conexao, "INSERT INTO secretaria (instituicao_nome, instituicao_email, instituicao_telefone, instituicao_senha_acesso) VALUES ('$instituicao_nome', '$instituicao_email', '$instituicao_telefone', '$instituicao_senha_acesso')");
+          // $conexao é do arquivo config.php, depois fical igual ao insert into do banco de dados, primeiro o comando, depois a tabela, depois as colunas, depois os valores.
 
+        header('Location: ../Login/login_secretaria/login_secretaria.php');
+    }
 }
+
 
 ?>
 

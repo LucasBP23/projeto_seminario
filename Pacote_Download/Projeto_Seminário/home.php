@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Área de login</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/x-icon" href="images/Logo_Completo.png"> <!--Coloca o logo no topo da guia da página-->
+    <link rel="icon" type="image/x-icon" href="images/logo_completo.png"> <!--Coloca o logo no topo da guia da página-->
 </head>
 <body>
 
@@ -34,8 +34,8 @@
                 <a href="Login"></a>
                 <br>
                 <div class="btn_container">
-                    <a href="Login/login_secretaria/login_secretaria.php" class="btn_login_secretaria">Entrar</a>
-                    <a href="Cadastro_secretaria/cad_secretaria.php" class="btn_login_secretaria">Cadastrar</a>
+                    <a href="login/login_secretaria/login_secretaria.html" class="btn_login_secretaria">Entrar</a>
+                    <a href="cadastro_secretaria/cad_secretaria.php" class="btn_login_secretaria">Cadastrar</a>
                 </div>
             </div>  
        
@@ -49,7 +49,7 @@
             </div>
             <a href="Login"></a>
             <br>
-            <a href="Login/Login_Professor/login_professor.php" class="btn_login">Entrar</a>
+            <a href="login/login_professor/login_professor.html" class="btn_login">Entrar</a>
         </div>  
     </section>
 
@@ -62,7 +62,7 @@
         </div>
         <a href="Login"></a>
         <br>
-        <a href="Login/Login_aluno/login_aluno.php" class="btn_login">Entrar</a>
+        <a href="login/login_aluno/login_aluno.html" class="btn_login">Entrar</a>
     </div>  
 </section>
     

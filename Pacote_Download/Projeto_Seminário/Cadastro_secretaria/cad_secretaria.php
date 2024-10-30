@@ -39,7 +39,7 @@
         $result = mysqli_query($conexao, "INSERT INTO secretaria (instituicao_nome, instituicao_email, instituicao_telefone, instituicao_senha_acesso) VALUES ('$instituicao_nome', '$instituicao_email', '$instituicao_telefone', '$instituicao_senha_acesso')");
           // $conexao é do arquivo config.php, depois fical igual ao insert into do banco de dados, primeiro o comando, depois a tabela, depois as colunas, depois os valores.
 
-        header('Location: ../Login/login_secretaria/login_secretaria.php');
+        header('Location: ../login/login_secretaria/login_secretaria.html');
     }
 }
 
@@ -113,7 +113,7 @@
                     <input type="submit" name="submit" id="submit" class="submit_form" value="Cadastrar">
 
             <div class="btn_login">
-            <p>Já tem uma conta?<a href="../Login/login_secretaria/login_secretaria.php" class="register-link">  Clique aqui.</a></p>
+            <p>Já tem uma conta?<a href="../login/login_secretaria/login_secretaria.html" class="register-link">  Clique aqui.</a></p>
         </div>
                   
             </form>

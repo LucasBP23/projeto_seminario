@@ -11,7 +11,7 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url('../../images/Secretaria.jpg') no-repeat;
+    background: url('../../images/secretaria.jpg') no-repeat;
     background-size: cover; 
     background-position: center;
 }
@@ -78,6 +78,7 @@ header {
     font-weight: 500;
     margin-left: 40px;
     transition: .5s; /*devido ao hover abaixo*/
+    
 }
 
 .navigation .btnLogin-popup:hover {
@@ -161,32 +162,6 @@ header {
     line-height: 57px;
 }
 
-.remember-forgot {
-    font-size: .9em;
-    color: #0d0944;
-    font-weight: 500;
-    margin: -15px 0 15px;
-    display: flex;
-    justify-content: space-between;
-}
-
-
-/*Cor do certinho do relembrar*/
-.remember-forgot label input{
-    accent-color: #0d0944;
-    margin-right: 3px;
-}
-
-/*Cor do esquecenha senha*/
-.remember-forgot a {
-    color: #0d0944;
-    text-decoration: none;
-}
-
-/*Cria uma linha quando passa o mouse no esqueci a senha*/
-.remember-forgot a:hover {
-    text-decoration: underline;
-}
 
 /*Login central abaixo*/
 .btn {

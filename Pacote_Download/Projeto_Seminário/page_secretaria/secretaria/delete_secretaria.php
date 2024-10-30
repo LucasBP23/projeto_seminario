@@ -3,7 +3,7 @@
     if(!empty($_GET['id_instituicao'])) // Se não estiver vazio minha variavel/meu parametro id
     {
 
-        include_once('../config.php');
+        include_once('../../config.php');
 
 
         $id_instituicao = $_GET['id_instituicao']; // variavel id que recebe meus parametros

@@ -4,7 +4,7 @@
 {
 
     //Incluindo a conexão com o arquivo config.php que faz conexão com o banco de dados
-    include_once('../config.php');
+    include_once('../../config.php');
 
 
     $id_professor = $_GET['id_professor']; // variavel id que recebe meus parametros

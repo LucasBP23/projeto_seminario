@@ -3,7 +3,7 @@
     // Verificar se o usuário está logado
 if (!isset($_SESSION['instituicao_email'])) {
     // Se não estiver logado, redirecionar para a página de login
-    header("Location: ../Login/login_secretaria/login_secretaria.php");
+    header("Location: ../login/login_secretaria/login_secretaria.html");
     exit();
 }//teste
 

@@ -7,7 +7,7 @@
     if(isset($_POST['submit']) && !empty($_POST['instituicao_email']) && !empty($_POST['instituicao_senha_acesso'])) // se existir minha variavel post submit e o campo email e senha não estiverem vazio...
     {
         // ... ele vai deixar acessar o meu sistema...
-        include_once('config.php'); // inclusão da conexão com o banco de dados
+        include_once('../../config.php'); // inclusão da conexão com o banco de dados
         $instituicao_email = $_POST['instituicao_email'];
         $instituicao_senha_acesso = $_POST['instituicao_senha_acesso'];
         
@@ -39,7 +39,7 @@
          {
             unset($_SESSION['instituicao_email']); // Caso não existra registro com aquele email ou senha vou mandar destruir qualquer variavel que tenha session email e session senha
             unset($_SESSION['instituicao_senha_acesso']);
-            header('Location: Login/login_secretaria/login_secretaria.php');
+            header('Location: login_secretaria.html');
          }
 
          else
@@ -55,14 +55,14 @@
             $_SESSION['instituicao_nome'] = $user_data['instituicao_nome']; 
 
 
-            header('Location: Page_secretaria/index.php');
+            header('Location: ../../page_secretaria/index.php');
             exit();//teste
          }
     }
     else
     {
         // ... Caso não exista, ele não acessa e volta para a area de login.
-        header('Location: Login/login_secretaria/login_secretaria.php'); 
+        header('Location: login_secretaria.html'); 
     }
 
 

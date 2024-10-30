@@ -15,7 +15,7 @@ if (isset($_POST['submit']) && !empty($_POST['aluno_matricula']) && !empty($_POS
     if (mysqli_num_rows($result) < 1) {
         unset($_SESSION['aluno_matricula']);
         unset($_SESSION['aluno_senha_acesso']);
-        header('Location: login_aluno.php');
+        header('Location: login_aluno.html');
     } else {
         // Caso exista, obter os dados do aluno
         $user_data = mysqli_fetch_assoc($result);
@@ -32,12 +32,12 @@ if (isset($_POST['submit']) && !empty($_POST['aluno_matricula']) && !empty($_POS
             // Senha incorreta
             unset($_SESSION['aluno_matricula']);
             unset($_SESSION['aluno_senha_acesso']);
-            header('Location: login_aluno.php');
+            header('Location: login_aluno.html');
         }
     }
 } else {
     // Caso não exista, ele não acessa e volta para a area de login.
-    header('Location: login_aluno.php');
+    header('Location: login_aluno.html');
    
 }
 ?>

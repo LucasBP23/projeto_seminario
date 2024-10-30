@@ -6,12 +6,12 @@ if(isset($_POST['update']))
 {
 
             $id_aluno = $_POST['id_aluno'];
-            $aluno_nome_completo = $_POST['aluno_nome_completo'];
-            $aluno_data_nascimento = $_POST['aluno_data_nascimento'];
-            $aluno_cpf = $_POST['aluno_cpf'];
-            $aluno_estado = $_POST['aluno_estado'];
-            $aluno_cidade = $_POST['aluno_cidade'];
-            $aluno_endereco = $_POST['aluno_endereco'];
+            $aluno_nome_completo = addslashes($_POST['aluno_nome_completo']);
+            $aluno_data_nascimento = addslashes($_POST['aluno_data_nascimento']);
+            $aluno_cpf = addslashes($_POST['aluno_cpf']);
+            $aluno_estado = addslashes($_POST['aluno_estado']);
+            $aluno_cidade = addslashes($_POST['aluno_cidade']);
+            $aluno_endereco = addslashes($_POST['aluno_endereco']);
             // $aluno_matricula = str_pad(rand(0, 999999), 6, '0', STR_PAD_LEFT); // Gera matrícula aleatória
             // $aluno_senha = gerarSenha();
             // $aluno_senha_hash = password_hash($aluno_senha, PASSWORD_DEFAULT); // Hash da senha

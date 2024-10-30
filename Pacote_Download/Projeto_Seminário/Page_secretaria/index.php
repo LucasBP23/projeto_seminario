@@ -6,7 +6,7 @@
     {
         unset($_SESSION['instituicao_email']); // Caso não existra registro com aquele email ou senha vou mandar destruir qualquer variavel que tenha session email e session senha
         unset($_SESSION['instituicao_senha_acesso']);
-        header('Location: Login/login_secretaria/login_secretaria.php');
+        header('Location: ../login/login_secretaria/login_secretaria.html');
     }
 
     
@@ -48,7 +48,7 @@
     </div>
 
     <div class="f_topo">
-        <a href="../sair.php">&#x2B05; Voltar ou sair</a>
+        <a href="../sair.php">&#x2B05; Sair</a>
     </div>
 
 </header>
@@ -58,13 +58,13 @@
         <!-- <label for="Cad_aluno">Cadastrar aluno</label>
         <input type="text"> -->
         <br>
-        <a href="edit_secretaria.php" target="iframe-menu">&#x270F;  Editar dados </a>
+        <a href="secretaria/edit_secretaria.php" target="iframe-menu">&#x270F;  Editar dados </a>
         <br>
         <hr>
-        <a href="Cad_professor.php" target="iframe-menu">Cadastrar Professor</a>
+        <a href="professor/cad_professor.php" target="iframe-menu">Cadastrar Professor</a>
         <br>
         <hr>
-        <a href="edit_professor.php" target="iframe-menu">Editar Professor</a>
+        <a href="professor/edit_professor.php" target="iframe-menu">Editar Professor</a>
         <br>
         <hr>
         <a href="aluno/cad_aluno.php" target="iframe-menu">  Cadastrar aluno </a>

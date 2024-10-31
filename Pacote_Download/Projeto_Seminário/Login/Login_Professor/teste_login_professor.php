@@ -9,10 +9,12 @@ if (isset($_POST['submit']) && !empty($_POST['professor_matricula']) && !empty($
     $professor_senha_acesso = $_POST['professor_senha_acesso'];
 
     //VERIFICANDO SE ESSES PARAMETROS EXISTEM NO BANCO DE DADOS
-    $sql = "SELECT * FROM professor WHERE professor_matricula = '$professor_matricula'";
+    $sql = "SELECT professor_matricula, id_instituicao, professor_nome_completo, professor_senha_acesso FROM professor WHERE professor_matricula = '$professor_matricula'";
+    // $sql = "SELECT * FROM professor WHERE professor_matricula = '$professor_matricula'";
     $result = $conexao->query($sql); // essa conexao foi feita no arquivo config.php
 
     if (mysqli_num_rows($result) < 1) {
+        // Matrícula não encontrada, volta para o login do professor
         unset($_SESSION['professor_matricula']);
         unset($_SESSION['professor_senha_acesso']);
         header('Location: login_professor.html');
@@ -25,9 +27,10 @@ if (isset($_POST['submit']) && !empty($_POST['professor_matricula']) && !empty($
             // A senha está correta, armazena os dados da sessão
             $_SESSION['professor_matricula'] = $user_data['professor_matricula'];
             $_SESSION['id_instituicao'] = $user_data['id_instituicao'];  // Armazenar o id_instituicao da secretaria logada
-            
+            $_SESSION['professor_nome_completo'] = $user_data['professor_nome_completo'];
+
             header('Location: ../../page_professor/page_professor.php');
-            exit(); // teste
+            exit();
         } else {
             // Senha incorreta
             unset($_SESSION['professor_matricula']);

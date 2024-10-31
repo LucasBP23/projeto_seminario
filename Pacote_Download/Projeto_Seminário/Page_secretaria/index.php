@@ -72,33 +72,38 @@
         <hr>
         <a href="aluno/edit_aluno.php" target="iframe-menu"><ion-icon name="pencil-outline"></ion-icon>Editar aluno</a>
         <br>
+
         <hr>
-        <!-- <a href="Cad_turma.html"><ion-icon name="add-circle-outline"></ion-icon> Cadastrar turma</a>
+        <a href="curso/cad_curso.php" target="iframe-menu"><ion-icon name="add-circle-outline"></ion-icon> Cadastrar curso</a>
+        <br>
+      
         <hr>
-        <a href="Edit_turma.html">&#x270F; Editar Turma</a>
+        <a href="materia/cad_materia.php" target="iframe-menu"><ion-icon name="add-circle-outline"></ion-icon> Cadastrar matéria</a>
         <br>
         <hr>
-        <a href="#"><ion-icon name="add-circle-outline"></ion-icon> Cadastrar curso</a>
+        <a href="turma/cadastro_turma.php" target="iframe-menu"><ion-icon name="add-circle-outline"></ion-icon> Cadastrar turma</a>
         <br>
         <hr>
-        <a href="#" target="iframe-menu"><ion-icon name="pencil-outline"></ion-icon> Editar cursos</a>
+        <a href="turma/listar_editar_turmas.php" target="iframe-menu">&#x270F; Lista de turmas</a>
         <br>
         <hr>
-        <a href="#"><ion-icon name="add-circle-outline"></ion-icon> Cadastrar disciplina</a>
+        <a href="matricular_professor/turma_professor_materia.php" target="iframe-menu"><ion-icon name="add-circle-outline"></ion-icon> Matricular professor</a>
         <br>
         <hr>
-        <a href="#" target="iframe-menu"><ion-icon name="pencil-outline"></ion-icon> Editar disciplinas</a>
+        <a href="matricular_professor/gerenciar_relacoes.php" target="iframe-menu">&#x270F; Editar relação professor</a>
+        <br>
+        
+        <hr>
+        <a href="matricular_aluno/matricular_aluno.php" target="iframe-menu"><ion-icon name="add-circle-outline"></ion-icon> Matricular aluno</a>
         <br>
         <hr>
-        <a href="#"><ion-icon name="add-circle-outline"></ion-icon> Matricular aluno</a>
+        <a href="matricular_aluno/gerenciar_alunos_turma.php" target="iframe-menu">&#x270F; Editar matrícula aluno</a>
         <br>
-        <hr>
-        <a href="#" target="iframe-menu"><ion-icon name="pencil-outline"></ion-icon> Editar matrículas</a>
-        <br>
-        <hr>
+        
+        <!-- <hr>
         <a href="#" target="iframe-menu"> Emitir histórico</a>
         <br>
-        <hr> -->
+        <hr>  -->
 
 
     </div>

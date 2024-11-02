@@ -34,7 +34,7 @@ if (!isset($_SESSION['instituicao_email'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="edit_aluno.css">
+    <link rel="stylesheet" href="edit_aluno.css?v=1.2">
 
     <!-- ICONES DO GOOGLE -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
@@ -49,7 +49,7 @@ $icon_delete = '<span class="material-symbols-outlined">
 delete
 </span>';
 ?>  
-    <h1>teste</h1>
+    <h1>Lista de alunos cadastrados.</h1>
     
     <div class="dados">
         <table class="table">

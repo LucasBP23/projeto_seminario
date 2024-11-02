@@ -34,7 +34,7 @@ if (!isset($_SESSION['instituicao_email'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="edit_secretaria.css">
+    <link rel="stylesheet" href="edit_secretaria.css?v=1.1">
 
     <!-- Icone do google -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
@@ -43,16 +43,15 @@ if (!isset($_SESSION['instituicao_email'])) {
 <body>
 <?php 
 
-$icon_editar = '<span class="material-symbols-outlined">
-edit_square
-</span>';
-$icon_delete = '<span class="material-symbols-outlined">
-delete
-</span>';
+
+$icon_editar = '<span class="material-symbols-outlined">edit_square</span>';
+$icon_delete = '<span class="material-symbols-outlined">delete</span>';
+
+
 
 ?>
 
-    <h1>teste</h1>
+    <h1>Edite os dados da instituição</h1>
     
     <div class="dados">
         <table class="table">
@@ -77,11 +76,14 @@ delete
                         echo "<td>".$user_data['instituicao_telefone']."</td>";
                         echo "<td>".$user_data['instituicao_senha_acesso']."</td>";
                         echo "<td>
-                        <a class='icon_editar' href='editar_secretaria.php?id_instituicao=$user_data[id_instituicao]'>  $icon_editar 
-                        </a>
-                        <a class='icon_delete' href='delete_secretaria.php?id_instituicao=$user_data[id_instituicao]'>  $icon_delete
-                        </a>
-                        </td>";
+                      
+                       <a class='icon_editar' href='editar_secretaria.php?id_instituicao=$user_data[id_instituicao]'>
+                        $icon_editar
+                    </a>
+                    <a class='icon_delete' href='delete_secretaria.php?id_instituicao=$user_data[id_instituicao]' onclick='return confirm(\"Tem certeza que deseja deletar esta instituição?\");'>
+                        $icon_delete
+                    </a>
+                    </td>";
                         echo "<tr>";
 
                     }   

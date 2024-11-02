@@ -9,7 +9,7 @@ if (isset($_POST['submit']) && !empty($_POST['professor_matricula']) && !empty($
     $professor_senha_acesso = $_POST['professor_senha_acesso'];
 
     //VERIFICANDO SE ESSES PARAMETROS EXISTEM NO BANCO DE DADOS
-    $sql = "SELECT professor_matricula, id_instituicao, professor_nome_completo, professor_senha_acesso FROM professor WHERE professor_matricula = '$professor_matricula'";
+    $sql = "SELECT * FROM professor WHERE professor_matricula = '$professor_matricula'";
     // $sql = "SELECT * FROM professor WHERE professor_matricula = '$professor_matricula'";
     $result = $conexao->query($sql); // essa conexao foi feita no arquivo config.php
 
@@ -25,6 +25,7 @@ if (isset($_POST['submit']) && !empty($_POST['professor_matricula']) && !empty($
         // Verifica se a senha fornecida corresponde à senha hashada armazenada
         if (password_verify($professor_senha_acesso, $user_data['professor_senha_acesso'])) {
             // A senha está correta, armazena os dados da sessão
+            $_SESSION['id_professor'] = $user_data['id_professor'];  // Armazena o id_professor
             $_SESSION['professor_matricula'] = $user_data['professor_matricula'];
             $_SESSION['id_instituicao'] = $user_data['id_instituicao'];  // Armazenar o id_instituicao da secretaria logada
             $_SESSION['professor_nome_completo'] = $user_data['professor_nome_completo'];

@@ -59,7 +59,7 @@
     <title>Document</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="icon" type="image/x-icon" href="Images/UniSGE-removebg-preview.png"> <!--Coloca o logo no topo da guia da página-->
-    <link rel="stylesheet" href="editar_secretaria.css">
+    <link rel="stylesheet" href="editar_secretaria.css?v=1.1">
    
       
         
@@ -67,7 +67,7 @@
 <body>
 <a href="edit_secretaria.php" style="color: white; background: red; position:relative; z-index: 10;">Voltar</a>
     <header class="topo">
-    <h1>Formulário - Cadastre sua instuição de ensino.</h1>
+    
 </header>
 
     <div class="box">  
@@ -97,7 +97,7 @@
                     </div>
                    
 
-                    <h4>Cadastre uma senha</h4>
+                 <br><br>
                     <div class="inputBox">
                         <input type="text" name="instituicao_senha_acesso" id="instituicao_senha_acesso" class="inputUser" value="<?php echo $instituicao_senha_acesso?>" required>
                         <label for="instituicao_senha_acesso"class="labelInput">Senha: </label>

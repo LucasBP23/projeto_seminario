@@ -42,12 +42,8 @@ if (!isset($_SESSION['instituicao_email'])) {
 <body>
 
 <?php 
-$icon_editar = '<span class="material-symbols-outlined">
-edit_square
-</span>';
-$icon_delete = '<span class="material-symbols-outlined">
-delete
-</span>';
+$icon_editar = '<span class="material-symbols-outlined">edit_square</span>';
+$icon_delete = '<span class="material-symbols-outlined">delete</span>';
 ?>  
     <h1>Lista de professores cadastrados.</h1>
     
@@ -98,11 +94,14 @@ delete
                         echo "<td>".$user_data['professor_senha_acesso']."</td>";
                         echo "<td>".$user_data['id_instituicao']."</td>";
                         echo "<td>
-                        <a class='icon_editar' href='editar_professor.php?id_professor=$user_data[id_professor]'>  $icon_editar 
-                        </a>
-                        <a class='icon_delete' href='delete_professor.php?id_professor=$user_data[id_professor]'>  $icon_delete
-                        </a>
-                        </td>";
+
+                        <a class='icon_editar' href='editar_professor.php?id_professor=$user_data[id_professor]'>
+                        $icon_editar
+                    </a>
+                    <a class='icon_delete' href='delete_professor.php?id_professor=$user_data[id_professor]' onclick='return confirm(\"Tem certeza que deseja deletar este professor(a)?\");'>
+                        $icon_delete
+                    </a>
+                    </td>";
                         echo "</tr>";
                     }   
                 ?>

@@ -57,20 +57,22 @@
     <div class="menu">
         <!-- <label for="Cad_aluno">Cadastrar aluno</label>
         <input type="text"> -->
+        <br> <a href="secretaria/pagina_inicial.html" target="iframe-menu"> <ion-icon name="home-sharp"></ion-icon>  Página inicial </a>
         <br>
+        <hr>
         <a href="secretaria/edit_secretaria.php" target="iframe-menu">&#x270F;  Editar dados </a>
         <br>
         <hr>
-        <a href="professor/cad_professor.php" target="iframe-menu">Cadastrar Professor</a>
+        <a href="professor/cad_professor.php" target="iframe-menu"><ion-icon name="add-circle-outline"></ion-icon> Cadastrar Professor</a>
         <br>
         <hr>
-        <a href="professor/edit_professor.php" target="iframe-menu">Editar Professor</a>
+        <a href="professor/edit_professor.php" target="iframe-menu">&#x270F; Editar Professor</a>
         <br>
         <hr>
-        <a href="aluno/cad_aluno.php" target="iframe-menu">  Cadastrar aluno </a>
+        <a href="aluno/cad_aluno.php" target="iframe-menu"> <ion-icon name="add-circle-outline"></ion-icon> Cadastrar aluno </a>
         <br>
         <hr>
-        <a href="aluno/edit_aluno.php" target="iframe-menu"><ion-icon name="pencil-outline"></ion-icon>Editar aluno</a>
+        <a href="aluno/edit_aluno.php" target="iframe-menu">&#x270F; Editar aluno</a>
         <br>
 
         <hr>

@@ -23,9 +23,11 @@ if (isset($_POST['submit']) && !empty($_POST['aluno_matricula']) && !empty($_POS
         // Verifica se a senha fornecida corresponde à senha hashada armazenada
         if (password_verify($aluno_senha_acesso, $user_data['aluno_senha_acesso'])) {
             // A senha está correta, armazena os dados da sessão
+            $_SESSION['id_aluno'] = $user_data['id_aluno'];  // Armazena o id_professor
             $_SESSION['aluno_matricula'] = $user_data['aluno_matricula'];
             $_SESSION['id_instituicao'] = $user_data['id_instituicao'];  // Armazenar o id_instituicao da secretaria logada
-            
+            $_SESSION['aluno_nome_completo'] = $user_data['aluno_nome_completo'];
+
             header('Location: ../../page_aluno/page_aluno.php');
             exit(); // teste
         } else {

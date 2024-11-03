@@ -18,52 +18,49 @@
         // print_r('Senha: ' . $instituicao_senha_acesso);
 
         //VERIFICANDO SE ESSES PARAMETROS EXISTEM NO BANCO DE DADOS
-        $sql = "SELECT * FROM secretaria WHERE instituicao_email = '$instituicao_email' and instituicao_senha_acesso = '$instituicao_senha_acesso'";
+        $sql = "SELECT * FROM secretaria WHERE instituicao_email = '$instituicao_email'";
 
         $result = $conexao->query($sql); // essa conexao foi feito no arquivo config.php
    
-
-        // print_r($sql);
-        // print_r($result); // [num_rows] => 1 se aparecer assim é porque existe uma linha igual de email e senha
-
-        //VERIFICANDO SE EXISTE OU NÃO ESSE EMAIL E SENHA
-        // if(mysqli_num_rows($result) < 1)
-        // {
-        //     print_r('Não existe');
-        // }
-        // else
-        // {
-        //     print_r('Existe');
-        // }
-        if(mysqli_num_rows($result) < 1)
-         {
-            unset($_SESSION['instituicao_email']); // Caso não existra registro com aquele email ou senha vou mandar destruir qualquer variavel que tenha session email e session senha
+        if (mysqli_num_rows($result) < 1) {
+            unset($_SESSION['instituicao_email']);
             unset($_SESSION['instituicao_senha_acesso']);
             header('Location: login_secretaria.html');
-         }
-
-         else
-         {
+        } else {
+    
             // Caso exista, obter os dados da secretaria
-        $user_data = mysqli_fetch_assoc($result);
-            $_SESSION['instituicao_email'] =$instituicao_email; // assim que entrar no sistema ele vai criar as variasveis session email e session senha
-            // $_SESSION['instituicao_senha_acesso'] =$instituicao_senha_acesso;
-            // $_SESSION['id_instituicao'] =$id_instituicao;
-              // Armazenar o email e o id_instituicao na sessão
-            $_SESSION['instituicao_email'] = $user_data['instituicao_email'];
-            $_SESSION['id_instituicao'] = $user_data['id_instituicao'];  // Armazenar o id_instituicao da secretaria logada
-            $_SESSION['instituicao_nome'] = $user_data['instituicao_nome']; 
+            $user_data = mysqli_fetch_assoc($result);
+    
+            // Verifica se a senha fornecida corresponde à senha hashada armazenada
+            if (password_verify($instituicao_senha_acesso, $user_data['instituicao_senha_acesso'])) {
+                // A senha está correta, armazena os dados da sessão
 
 
-            header('Location: ../../page_secretaria/index.php');
-            exit();//teste
-         }
-    }
-    else
-    {
-        // ... Caso não exista, ele não acessa e volta para a area de login.
-        header('Location: login_secretaria.html'); 
-    }
+                $_SESSION['instituicao_email'] =$instituicao_email; // assim que entrar no sistema ele vai criar as variasveis session email e session senha
+                // Armazenar o email e o id_instituicao na sessão
+              $_SESSION['instituicao_email'] = $user_data['instituicao_email'];
+              $_SESSION['id_instituicao'] = $user_data['id_instituicao'];  // Armazenar o id_instituicao da secretaria logada
+              $_SESSION['instituicao_nome'] = $user_data['instituicao_nome']; 
+    
+              header('Location: ../../page_secretaria/index.php');
+                exit(); 
+            } else {
+                // Senha incorreta, ele não acessa e volta para a area de login.
+                unset($_SESSION['aluno_matricula']);
+                unset($_SESSION['aluno_senha_acesso']);
+                header('Location: login_secretaria.html'); 
+            }
+        }
+?>
 
+<?php 
 
+//VERIFICANDO SE ESSES PARAMETROS EXISTEM NO BANCO DE DADOS
+   
+} else {
+    // Caso não exista, ele não acessa e volta para a area de login.
+    header('Location: login_aluno.html');
+   
+}
+?>
 ?>

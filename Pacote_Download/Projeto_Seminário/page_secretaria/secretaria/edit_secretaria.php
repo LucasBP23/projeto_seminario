@@ -57,7 +57,7 @@ $icon_delete = '<span class="material-symbols-outlined">delete</span>';
         <table class="table">
             <thead>
                 <tr>
-                    <th scope="col">#</th>
+                    <!-- <th scope="col">#</th> -->
                     <th scope="col">Nome da Instituição</th>
                     <th scope="col">Email</th>
                     <th scope="col">Telefone</th>
@@ -70,7 +70,7 @@ $icon_delete = '<span class="material-symbols-outlined">delete</span>';
                     while($user_data = mysqli_fetch_assoc($result))
                     {
                         echo "<tr>";
-                        echo "<td>".$user_data['id_instituicao']."</td>";
+                        // echo "<td>".$user_data['id_instituicao']."</td>";
                         echo "<td>".$user_data['instituicao_nome']."</td>";
                         echo "<td>".$user_data['instituicao_email']."</td>";
                         echo "<td>".$user_data['instituicao_telefone']."</td>";

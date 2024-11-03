@@ -33,10 +33,9 @@
                 </div>
                 <a href="Login"></a>
                 <br>
-                <div class="btn_container">
-                    <a href="login/login_secretaria/login_secretaria.html" class="btn_login_secretaria">Entrar</a>
-                    <a href="cadastro_secretaria/cad_secretaria.php" class="btn_login_secretaria">Cadastrar</a>
-                </div>
+                
+                    <a href="login/login_secretaria/login_secretaria.html" class="btn_login">Entrar</a>
+                              
             </div>  
        
         </section>

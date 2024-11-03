@@ -315,26 +315,6 @@ body{
     
 }
 
-.btn_login_secretaria{
-    display: inline-block;
-    border: 3px solid rgb(16, 122, 16);
-    padding: 15px 51px;
-    background: rgb(16, 122, 16);
-    color: white;
-    border-radius: 8px;
-    text-decoration: none; /* Remove o sublinhado */
-}
-
-.btn_login_secretaria:hover{
-    display: inline-block;
-    border: 3px solid rgb(16, 122, 16);
-    padding: 15px 51px;
-    background: white;
-    color: rgb(16, 122, 16);
-    border-radius: 8px;
-    text-decoration: none; /* Remove o sublinhado */
-}
-
 .btn_container{
     margin-top: 50px;
     display: flex;

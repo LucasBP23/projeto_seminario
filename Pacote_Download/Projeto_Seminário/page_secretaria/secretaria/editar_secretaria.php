@@ -24,7 +24,7 @@
             $instituicao_nome = $user_data['instituicao_nome'];
             $instituicao_email = $user_data['instituicao_email'];
             $instituicao_telefone = $user_data['instituicao_telefone'];
-            $instituicao_senha_acesso = $user_data['instituicao_senha_acesso'];
+            // $instituicao_senha_acesso = $user_data['instituicao_senha_acesso'];
         }
 
     }
@@ -98,15 +98,11 @@
                    
 
                  <br><br>
-                    <div class="inputBox">
-                        <input type="text" name="instituicao_senha_acesso" id="instituicao_senha_acesso" class="inputUser" value="<?php echo $instituicao_senha_acesso?>" required>
-                        <label for="instituicao_senha_acesso"class="labelInput">Senha: </label>
-                    </div>
-                    <br><br>
+                    
 
                     <!-- ficara escondido -->
                     <input type="hidden" name="id_instituicao" value="<?php echo $id_instituicao?>">
-    
+                    <input type="hidden" name="instituicao_senha_acesso" value="<?php echo $instituicao_senha_acesso?>">
                     <input type="submit" name="update" id="update" class="submit_form" value="Atualizar">
                   
             </form>

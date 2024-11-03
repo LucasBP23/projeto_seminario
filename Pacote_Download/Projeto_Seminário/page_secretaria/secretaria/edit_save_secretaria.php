@@ -15,7 +15,7 @@ if(isset($_POST['update']))
            
 
 
-    $sqlUpdate = "UPDATE secretaria SET instituicao_nome='$instituicao_nome', instituicao_email='$instituicao_email', instituicao_telefone='$instituicao_telefone',instituicao_senha_acesso='$instituicao_senha_acesso' WHERE id_instituicao='$id_instituicao'"; 
+    $sqlUpdate = "UPDATE secretaria SET instituicao_nome='$instituicao_nome', instituicao_email='$instituicao_email', instituicao_telefone='$instituicao_telefone' WHERE id_instituicao='$id_instituicao'"; 
 
     $result = $conexao->query($sqlUpdate);
 

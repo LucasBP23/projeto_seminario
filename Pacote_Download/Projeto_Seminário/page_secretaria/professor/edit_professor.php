@@ -14,7 +14,7 @@ if (!isset($_SESSION['instituicao_email'])) {
 
         // $sql = "SELECT * FROM secretaria ORDER BY id_instituicao DESC";
 
-        $sql = "SELECT * FROM professor WHERE id_instituicao = '$id_instituicao' ORDER BY id_professor DESC";//TESTE
+        $sql = "SELECT * FROM professor WHERE id_instituicao = '$id_instituicao' ORDER BY professor_nome_completo ASC";//TESTE
 
 
         $result = $conexao->query($sql);
@@ -53,7 +53,7 @@ $icon_delete = '<span class="material-symbols-outlined">delete</span>';
             <thead>
                 <tr>
 
-                    <th scope="col">#</th>
+                    <!-- <th scope="col">#</th> -->
                     <th scope="col">Nome</th>
                     <th scope="col">Data de nascimento</th>
                     <th scope="col">CPF</th>
@@ -74,7 +74,7 @@ $icon_delete = '<span class="material-symbols-outlined">delete</span>';
                     while($user_data = mysqli_fetch_assoc($result))
                     {
                         echo "<tr>";
-                        echo "<td>".$user_data['id_professor']."</td>";
+                        // echo "<td>".$user_data['id_professor']."</td>";
                         echo "<td>".$user_data['professor_nome_completo']."</td>";
                         // echo "<td>".$user_data['professor_data_nascimento']."</td>";
                         echo "<td>" . date("d/m/Y", strtotime($user_data['professor_data_nascimento'])) . "</td>";

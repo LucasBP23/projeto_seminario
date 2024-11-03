@@ -79,19 +79,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (mysqli_num_rows($result) > 0) {
         echo '<table class="table table-bordered mt-3">
                 <tr>
-                    <th>Id do curso</th>
+                    
                     <th>Nome do Curso</th>
                     <th>Descrição</th>
-                    <th>Id da instituição</th>
+                    
                     <th>Ações</th>
                 </tr>';
         
         while ($curso = mysqli_fetch_assoc($result)) {
             echo '<tr>
-                    <td>' . $curso['id_curso'] . '</td>
+                  
                     <td>' . $curso['nome_curso'] . '</td>
                     <td>' . $curso['descricao'] . '</td>
-                    <td>' . $curso['id_instituicao'] . '</td>
+                  
                     <td>
                       <a href="editar_curso.php?id_curso=' . $curso['id_curso'] . '" class="btn btn-warning btn-sm">Editar</a>
                 <form method="POST" action="" class="d-inline">

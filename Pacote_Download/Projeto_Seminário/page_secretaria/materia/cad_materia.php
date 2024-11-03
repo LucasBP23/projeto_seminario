@@ -109,13 +109,13 @@ if (isset($_POST['id_curso_selecionado'])) {
     <?php if (isset($id_curso_selecionado) && mysqli_num_rows($materias) > 0): ?>
         <table class="table table-bordered mt-3">
             <tr>
-                <th>Id da Matéria</th>
+                <!-- <th>Id da Matéria</th> -->
                 <th>Nome da Matéria</th>
                 <th>Ações</th>
             </tr>
             <?php while ($materia = mysqli_fetch_assoc($materias)): ?>
                 <tr>
-                    <td><?php echo $materia['id_materia']; ?></td>
+                  
                     <td><?php echo $materia['materia_nome']; ?></td>
                     <td>
                         <form method="POST" action="" class="d-inline">

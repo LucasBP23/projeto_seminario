@@ -17,13 +17,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $id_turma = $_POST['id_turma'];
         $novo_nome = $_POST['novo_nome'];
 
-        // Atualizar o nome da turma
-        $sql = "UPDATE turma SET turma_nome='$novo_nome' WHERE id_turma=$id_turma";
-        if (mysqli_query($conexao, $sql)) {
-            echo "<script>alert('Nome da turma atualizado com sucesso!');</script>";
+
+        // Verifica se já existe uma turma com o mesmo nome no mesmo curso
+        $verifica_sql = "SELECT * FROM turma 
+                    WHERE turma_nome = '$novo_nome' 
+                    AND id_curso = (SELECT id_curso FROM turma WHERE id_turma = $id_turma) 
+                    AND id_turma != $id_turma";
+        $verifica_result = mysqli_query($conexao, $verifica_sql);
+
+
+        if (mysqli_num_rows($verifica_result) > 0) {
+            echo "<script>alert('Já existe uma turma com este nome no mesmo curso.');</script>";
         } else {
-            echo "<script>alert('Erro ao atualizar o nome da turma.');</script>";
+            // Atualizar o nome da turma se não houver duplicidade
+            $sql = "UPDATE turma SET turma_nome='$novo_nome' WHERE id_turma=$id_turma";
+            if (mysqli_query($conexao, $sql)) {
+                echo "<script>alert('Nome da turma atualizado com sucesso!');</script>";
+            } else {
+                echo "<script>alert('Erro ao atualizar o nome da turma.');</script>";
+            }
         }
+
     } elseif (isset($_POST['excluir'])) {
         $id_turma = $_POST['id_turma'];
 
@@ -36,6 +50,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 }
+
+     
 ?>
 
 <!DOCTYPE html>

@@ -21,11 +21,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['cadastrar'])) {
 
     // Verifica se a combinação já existe
     $verifica_sql = "SELECT * FROM turma_professor_materia 
-                     WHERE id_turma = $id_turma AND id_materia = $id_materia AND id_professor = $id_professor";
+                     WHERE id_turma = $id_turma AND id_materia = $id_materia";
     $verifica_result = mysqli_query($conexao, $verifica_sql);
 
     if (mysqli_num_rows($verifica_result) > 0) {
-        $mensagem_erro = "Essa combinação já está cadastrada.";
+        $mensagem_erro = "Já existe um professor para essa combinação de turma e matéria.";
     } else {
         // Insere a nova combinação
         $sql = "INSERT INTO turma_professor_materia (id_turma, id_materia, id_professor) 

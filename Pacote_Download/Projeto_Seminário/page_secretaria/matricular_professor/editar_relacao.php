@@ -29,15 +29,30 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['atualizar'])) {
     $id_materia = $_POST['id_materia'];
     $id_professor = $_POST['id_professor'];
 
-    // Atualiza a relação
-    $update_sql = "UPDATE turma_professor_materia SET id_turma = $id_turma, id_materia = $id_materia, id_professor = $id_professor WHERE id_turma_professor_materia = $id_relacao";
-    
-    if (mysqli_query($conexao, $update_sql)) {
-        $mensagem_sucesso = "Relação atualizada com sucesso!";
+
+    // Verifica se a matéria já está atribuída a outro professor na mesma turma
+    $verifica_sql = "SELECT * FROM turma_professor_materia 
+            WHERE id_materia = $id_materia 
+            AND id_turma = $id_turma 
+            AND id_turma_professor_materia != $id_relacao"; // Exclui a relação atual
+    $verifica_result = mysqli_query($conexao, $verifica_sql);
+
+
+
+    if (mysqli_num_rows($verifica_result) > 0) {
+        $mensagem_erro = "Esta matéria já está cadastrada para esta turma com outro professor.";
     } else {
-        $mensagem_erro = "Erro ao atualizar a relação: " . mysqli_error($conexao);
+        // Atualiza a relação se não houver duplicidade
+        $update_sql = "UPDATE turma_professor_materia SET id_turma = $id_turma, id_materia = $id_materia, id_professor = $id_professor WHERE id_turma_professor_materia = $id_relacao";
+        
+        if (mysqli_query($conexao, $update_sql)) {
+            $mensagem_sucesso = "Relação atualizada com sucesso!";
+        } else {
+            $mensagem_erro = "Erro ao atualizar a relação: " . mysqli_error($conexao);
+        }
     }
 }
+
 
 // Carrega turmas e professores
 $turmas_sql = "SELECT turma.* FROM turma JOIN curso ON turma.id_curso = curso.id_curso WHERE curso.id_instituicao = $id_instituicao";
@@ -98,6 +113,7 @@ $professores_result = mysqli_query($conexao, $professores_sql);
         </div>
 
         <button type="submit" name="atualizar" class="btn btn-primary">Atualizar Relação</button>
+        <a href="gerenciar_relacoes.php" class="btn btn-secondary">Voltar</a>
     </form>
 </div>
 </body>

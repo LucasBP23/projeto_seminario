@@ -7,7 +7,7 @@
     <title>Document</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="icon" type="image/x-icon" href="Images/UniSGE-removebg-preview.png"> <!--Coloca o logo no topo da guia da página-->
-    <link rel="stylesheet" href="cad_professor.css?v=1.3">
+    <link rel="stylesheet" href="cad_professor.css?v=1.5">
    
       
         
@@ -42,35 +42,57 @@
                     <br><br>
 
                  
-                    <section class="coluna-50l">
                     <div class="inputBox">
-                    <label for="professor_estado" > <b>Estado: </b> </label>
-                    <br>
-                    <select id="professor_estado" name="professor_estado" class="inputUser" required>
-                    <option value="">Selecione um estado</option>
-                    </select>
+                    <input type="text" name="professor_cep" id="professor_cep" class="inputUser">
+                    <label for="professor_cep" class="labelInput">CEP: </label>
+                </div>
+                
+                <br><br>
+
+                
+                <section class="coluna-50l">
+                    <div class="inputBox">
+                        <input type="" name="professor_estado" id="professor_estado" class="inputUser"  required>
+                        <label for="professor_estado" class="labelInput">Estado: </label>
                     </div>
+                    </section>    
+
+                    <section class="coluna-50r">
+                        <div class="inputBox">
+                            <input type="text" name="professor_cidade" id="professor_cidade" class="inputUser"  required>
+                            <label for="professor_cidade" class="labelInput">Cidade: </label>
+                        </div>
                     </section>
-                    
+
+
+                <br><br><br>
+
+                <div class="inputBox">
+                    <input type="text" name="professor_logradouro" id="professor_logradouro" class="inputUser" required>
+                    <label for="professor_logradouro" class="labelInput">Logradouro: </label>
+                </div>
+
+                <br><br>
+
+                
+                <section class="coluna-50l">
+                <div class="inputBox">
+                    <input type="text" name="professor_bairro" id="professor_bairro" class="inputUser" required>
+                    <label for="professor_bairro" class="labelInput">Bairro: </label>
+                </div>
+                </section>
+
+                
+
+
+
                     <section class="coluna-50r">
                     <div class="inputBox">
-                    <label for="professor_cidade" > <b>Cidade: </b> </label>
-                    <select id="professor_cidade" name="professor_cidade" class="inputUser" required>
-                    <option value="">Selecione uma cidade</option>
-                    </select>
+                        <input type="number" name="professor_numero" id="professor_numero" class="inputUser"  required>
+                        <label for="professor_numero" class="labelInput">Número: </label>
                     </div>
                     </section>
-
                     <br><br><br>
-
-                    <div class="inputBox">
-                        <input type="text" name="professor_endereco" id="professor_endereco" class="inputUser"  required>
-                        <label for="professor_endereco" class="labelInput">Endereço: </label>
-                      
-                        
-                    </div>
-
-                    <br><br>
                 
         
 
@@ -94,6 +116,6 @@
 
 
 
-    <script src="cad_professor.js?v=1.3"></script>
+    <script src="cad_professor.js?v=1.5"></script>
 </body>
 </html>

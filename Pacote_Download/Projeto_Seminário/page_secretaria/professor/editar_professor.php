@@ -24,20 +24,15 @@
             $professor_nome_completo = $user_data['professor_nome_completo'];
             $professor_data_nascimento = $user_data['professor_data_nascimento'];
             $professor_cpf = $user_data['professor_cpf'];
+            $professor_cep = $user_data['professor_cep'];
             $professor_estado = $user_data['professor_estado'];
             $professor_cidade =  $user_data['professor_cidade'];
-            $professor_endereco = $user_data['professor_endereco'];
-            // $materia = $user_data['materia'];
-            // $titulacao_max = $user_data['titulacao_max'];
-            // $cidade = $user_data['cidade'];
-            // $estado = $user_data['estado'];
-            // $logradouro = $user_data['logradouro'];
-            // $numero = $user_data['numero'];
-            // $bairro = $user_data['bairro'];
-            // $complemento = $user_data['complemento'];
+            $professor_logradouro = $user_data['professor_logradouro'];
+            $professor_bairro = $user_data['professor_bairro'];
+            $professor_numero =  $user_data['professor_numero'];
+            
             // $professor_senha = $user_data['professor_senha'];
-            // Capturar o id_instituicao da sessão
-            // $id_instituicao = $_SESSION['id_instituicao'];
+       
            
         }
         
@@ -106,35 +101,59 @@
                     </div>
                     <br><br>
 
+                    <div class="inputBox">
+                        <input type="text" name="professor_cep" id="professor_cep" class="inputUser" value="<?php echo $professor_cep?>" >
+                        <label for="professor_cep" class="labelInput">CEP: </label>
+                      
+                        
+                    </div>
+                    <br><br>
+
                     <section class="coluna-50l">
                         <div class="inputBox">
-                            <label for="professor_estado" > <b>Estado: </b> </label>
+                        <label for="professor_estado" > <b>Estado: </b> </label>
+                        <input type="text" name="professor_estado" id="professor_estado" class="inputUser" value="<?php echo $professor_estado?>"  required>
                             <br>
-                            <select id="professor_estado" name="professor_estado" class="inputUser" required>
-                            <option value="<?php echo $professor_estado?>"><?php echo $professor_estado?></option>
-                            </select>
                         </div>
                     </section>
 
 
                     <section class="coluna-50r">
                         <div class="inputBox">
-                            <label for="professor_cidade" > <b>Cidade: </b> </label>
-                            <select id="professor_cidade" name="professor_cidade" class="inputUser" required>
-                            <option value="<?php echo $professor_cidade?>"><?php echo $professor_cidade?></option>
-                            </select>
+                        <label for="professor_cidade" > <b>Cidade: </b> </label>
+                        <input type="text" name="professor_cidade" id="professor_cidade" class="inputUser" value="<?php echo $professor_cidade?>" required>
+                            
                         </div>
                     </section>
 
                     <br><br><br>
 
                     <div class="inputBox">
-                        <input type="text" name="professor_endereco" id="professor_endereco" class="inputUser" value="<?php echo $professor_endereco?>"  required>
-                        <label for="professor_endereco" class="labelInput">Endereço: </label>
+                        <input type="text" name="professor_logradouro" id="professor_logradouro" class="inputUser" value="<?php echo $professor_logradouro?>"  required>
+                        <label for="professor_logradouro" class="labelInput">Logradouro: </label>
                         
                     </div>
 
                     <br><br>
+
+                    <section class="coluna-50l">
+                <div class="inputBox">
+                    <input type="text" name="professor_bairro" id="professor_bairro" class="inputUser" value="<?php echo $professor_bairro?>" required>
+                    <label for="professor_bairro" class="labelInput">Bairro: </label>
+                </div>
+                </section>
+
+                
+
+
+
+                    <section class="coluna-50r">
+                    <div class="inputBox">
+                        <input type="number" name="professor_numero" id="professor_numero" class="inputUser" value="<?php echo $professor_numero?>" required>
+                        <label for="professor_numero" class="labelInput">Número: </label>
+                    </div>
+                    </section>
+                    <br><br><br>
                     
                     
                    
@@ -151,6 +170,6 @@
 
 
 
-    <script src="cad_professor.js?v=1.3"></script>
+    <script src="cad_professor.js?v=1.4"></script>
 </body>
 </html>

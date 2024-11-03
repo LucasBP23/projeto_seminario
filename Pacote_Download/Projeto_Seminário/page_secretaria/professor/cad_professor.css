@@ -63,7 +63,7 @@ html, body {
 
 .inputBox{
     position: relative;
-    margin-left: 2%;
+    margin-left: 2.5%;
 
 }
 
@@ -106,14 +106,14 @@ html, body {
 .coluna-50l{
     display: inline-block;
     /* float: left; */
-    width: 48.5%;
+    width: 48%;
     margin-left: 1%;
 }
 
 .coluna-50r{
     display: inline-block;
     /* float: right; */
-    width: 48.5%;
+    width: 48%;
     /* margin-left: 1%;  */
 }
 

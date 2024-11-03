@@ -24,9 +24,12 @@
             $aluno_nome_completo = $user_data['aluno_nome_completo'];
             $aluno_data_nascimento = $user_data['aluno_data_nascimento'];
             $aluno_cpf = $user_data['aluno_cpf'];
+            $aluno_cep = $user_data['aluno_cep'];
             $aluno_estado = $user_data['aluno_estado'];
             $aluno_cidade =  $user_data['aluno_cidade'];
-            $aluno_endereco = $user_data['aluno_endereco'];
+            $aluno_logradouro = $user_data['aluno_logradouro'];
+            $aluno_bairro = $user_data['aluno_bairro'];
+            $aluno_numero =  $user_data['aluno_numero'];
             // Capturar o id_instituicao da sessão
             // $id_instituicao = $_SESSION['id_instituicao'];
            
@@ -97,35 +100,59 @@
                     </div>
                     <br><br>
 
+                    <div class="inputBox">
+                        <input type="text" name="aluno_cep" id="aluno_cep" class="inputUser" value="<?php echo $aluno_cep?>" >
+                        <label for="aluno_cep" class="labelInput">CEP: </label>
+                      
+                        
+                    </div>
+                    <br><br>
+
                     <section class="coluna-50l">
                         <div class="inputBox">
-                            <label for="aluno_estado" > <b>Estado: </b> </label>
+                        <label for="aluno_estado" > <b>Estado: </b> </label>
+                        <input type="text" name="aluno_estado" id="aluno_estado" class="inputUser" value="<?php echo $aluno_estado?>"  required>
                             <br>
-                            <select id="aluno_estado" name="aluno_estado" class="inputUser" required>
-                            <option value="<?php echo $aluno_estado?>"><?php echo $aluno_estado?></option>
-                            </select>
                         </div>
                     </section>
 
 
                     <section class="coluna-50r">
                         <div class="inputBox">
-                            <label for="aluno_cidade" > <b>Cidade: </b> </label>
-                            <select id="aluno_cidade" name="aluno_cidade" class="inputUser" required>
-                            <option value="<?php echo $aluno_cidade?>"><?php echo $aluno_cidade?></option>
-                            </select>
+                        <label for="aluno_cidade" > <b>Cidade: </b> </label>
+                        <input type="text" name="aluno_cidade" id="aluno_cidade" class="inputUser" value="<?php echo $aluno_cidade?>" required>
+                            
                         </div>
                     </section>
 
                     <br><br><br>
 
                     <div class="inputBox">
-                        <input type="text" name="aluno_endereco" id="aluno_endereco" class="inputUser" value="<?php echo $aluno_endereco?>"  required>
-                        <label for="aluno_endereco" class="labelInput">Endereço: </label>
+                        <input type="text" name="aluno_logradouro" id="aluno_logradouro" class="inputUser" value="<?php echo $aluno_logradouro?>"  required>
+                        <label for="aluno_logradouro" class="labelInput">Logradouro: </label>
                         
                     </div>
 
                     <br><br>
+
+                    <section class="coluna-50l">
+                <div class="inputBox">
+                    <input type="text" name="aluno_bairro" id="aluno_bairro" class="inputUser" value="<?php echo $aluno_bairro?>" required>
+                    <label for="aluno_bairro" class="labelInput">Bairro: </label>
+                </div>
+                </section>
+
+                
+
+
+
+                    <section class="coluna-50r">
+                    <div class="inputBox">
+                        <input type="number" name="aluno_numero" id="aluno_numero" class="inputUser" value="<?php echo $aluno_numero?>" required>
+                        <label for="aluno_numero" class="labelInput">Número: </label>
+                    </div>
+                    </section>
+                    <br><br><br>
                     
                     
                    
@@ -142,6 +169,6 @@
 
 
 
-    <script src="cad_aluno.js?v=1.3"></script>
+    <script src="cad_aluno.js?v=1.8"></script>
 </body>
 </html>

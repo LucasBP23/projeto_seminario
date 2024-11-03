@@ -31,9 +31,12 @@ if (!isset($_SESSION['id_instituicao'])) {
  $aluno_nome_completo = addslashes($_POST['aluno_nome_completo']);
  $aluno_data_nascimento = addslashes($_POST['aluno_data_nascimento']);
  $aluno_cpf = addslashes($_POST['aluno_cpf']);
+ $aluno_cep = addslashes($_POST['aluno_cep']);
  $aluno_estado = addslashes($_POST['aluno_estado']);
  $aluno_cidade = addslashes($_POST['aluno_cidade']);
- $aluno_endereco = addslashes($_POST['aluno_endereco']);
+ $aluno_logradouro = addslashes($_POST['aluno_logradouro']);
+ $aluno_bairro = addslashes($_POST['aluno_bairro']);
+ $aluno_numero = addslashes($_POST['aluno_numero']);
  $aluno_matricula = str_pad(rand(0, 999999), 6, '0', STR_PAD_LEFT); // Gera matrícula aleatória
  $aluno_senha = gerarSenha();
  $aluno_senha_hash = password_hash($aluno_senha, PASSWORD_DEFAULT); // Hash da senha
@@ -57,7 +60,7 @@ $id_instituicao = $_SESSION['id_instituicao'];
   // print_r("<br>");
   // print_r('Cidade: ' . $_POST['aluno_cidade']);
   // print_r("<br>");
-  // print_r('Endereço: ' . $_POST['aluno_endereco']);
+  // print_r('Endereço: ' . $_POST['aluno_logradouro']);
   // print_r("<br>");
   // print_r('Matrícula: ' . $aluno_matricula);
  
@@ -76,7 +79,7 @@ if (mysqli_num_rows($resultado) > 0) {
           </script>";
 } else {
 // $conexao é do arquivo config.php, depois fical igual ao insert into do banco de dados, primeiro o comando, depois a tabela, depois as colunas, depois os valores.
-$query = "INSERT INTO aluno (aluno_nome_completo, aluno_data_nascimento, aluno_cpf, aluno_estado, aluno_cidade, aluno_endereco, aluno_matricula, aluno_senha_acesso, id_instituicao) VALUES ('$aluno_nome_completo', '$aluno_data_nascimento', '$aluno_cpf', '$aluno_estado', '$aluno_cidade', '$aluno_endereco', '$aluno_matricula', '$aluno_senha_hash', '$id_instituicao')";
+$query = "INSERT INTO aluno (aluno_nome_completo, aluno_data_nascimento, aluno_cpf, aluno_cep, aluno_estado, aluno_cidade, aluno_logradouro, aluno_bairro, aluno_numero, aluno_matricula, aluno_senha_acesso, id_instituicao) VALUES ('$aluno_nome_completo', '$aluno_data_nascimento', '$aluno_cpf', '$aluno_cep', '$aluno_estado', '$aluno_cidade', '$aluno_logradouro', '$aluno_bairro', '$aluno_numero', '$aluno_matricula', '$aluno_senha_hash', '$id_instituicao')";
 
 
 //  // Verificar se o aluno foi inserido corretamente

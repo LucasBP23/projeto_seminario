@@ -30,9 +30,12 @@ if (!isset($_SESSION['id_instituicao'])) {
  $professor_nome_completo = addslashes($_POST['professor_nome_completo']);
  $professor_data_nascimento = addslashes($_POST['professor_data_nascimento']);
  $professor_cpf = addslashes($_POST['professor_cpf']);
+ $professor_cep = addslashes($_POST['professor_cep']);
  $professor_estado = addslashes($_POST['professor_estado']);
  $professor_cidade = addslashes($_POST['professor_cidade']);
- $professor_endereco = addslashes($_POST['professor_endereco']);
+ $professor_logradouro = addslashes($_POST['professor_logradouro']);
+ $professor_bairro = addslashes($_POST['professor_bairro']);
+ $professor_numero = addslashes($_POST['professor_numero']);
  $professor_matricula = str_pad(rand(0, 999999), 6, '0', STR_PAD_LEFT); // Gera matrícula aleatória
  $professor_senha = gerarSenha();
  $professor_senha_hash = password_hash($professor_senha, PASSWORD_DEFAULT); // Hash da senha
@@ -75,7 +78,7 @@ if (mysqli_num_rows($resultado) > 0) {
           </script>";
 } else {
 // $conexao é do arquivo config.php, depois fical igual ao insert into do banco de dados, primeiro o comando, depois a tabela, depois as colunas, depois os valores.
-$query = "INSERT INTO professor (professor_nome_completo, professor_data_nascimento, professor_cpf, professor_estado, professor_cidade, professor_endereco, professor_matricula, professor_senha_acesso, id_instituicao) VALUES ('$professor_nome_completo', '$professor_data_nascimento', '$professor_cpf', '$professor_estado', '$professor_cidade', '$professor_endereco', '$professor_matricula', '$professor_senha_hash', '$id_instituicao')";
+$query = "INSERT INTO professor (professor_nome_completo, professor_data_nascimento, professor_cpf, professor_cep, professor_estado, professor_cidade, professor_logradouro, professor_bairro, professor_numero, professor_matricula, professor_senha_acesso, id_instituicao) VALUES ('$professor_nome_completo', '$professor_data_nascimento', '$professor_cpf', '$professor_cep', '$professor_estado', '$professor_cidade', '$professor_logradouro', '$professor_bairro', '$professor_numero', '$professor_matricula', '$professor_senha_hash', '$id_instituicao')";
 
 
 //  // Verificar se o professor foi inserido corretamente

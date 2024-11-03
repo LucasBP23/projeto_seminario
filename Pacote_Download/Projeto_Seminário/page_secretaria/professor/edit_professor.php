@@ -32,12 +32,13 @@ if (!isset($_SESSION['instituicao_email'])) {
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.1">
     <title>Document</title>
-    <link rel="stylesheet" href="edit_professor.css?v=1.1">
+    <link rel="stylesheet" href="edit_professor.css?v=1.2">
 
     <!-- ICONES DO GOOGLE -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    
 </head>
 <body>
 
@@ -51,24 +52,21 @@ $icon_delete = '<span class="material-symbols-outlined">delete</span>';
         <table class="table">
             <thead>
                 <tr>
+
                     <th scope="col">#</th>
                     <th scope="col">Nome</th>
                     <th scope="col">Data de nascimento</th>
                     <th scope="col">CPF</th>
+                    <th scope="col">CEP</th>
                     <th scope="col">Estado</th>
                     <th scope="col">Cidade</th>
-                    <th scope="col">Endereço</th>
-                    <th scope="col">Matricula</th>
-                    <!-- <th scope="col">Titulação máxima</th>
-                    <th scope="col">Cidade</th>
-                    <th scope="col">Estado</th>
                     <th scope="col">Logradouro</th>
-                    <th scope="col">Número</th>
                     <th scope="col">Bairro</th>
-                    <th scope="col">Complemento</th> -->
-                    <th scope="col">Senha</th>
-                    <th scope="col">Id instituição</th>
-                    <th scope="col">...</th>
+                    <th scope="col">Número</th>
+                    <th scope="col">Matricula</th>
+                    <!-- <th scope="col">Senha</th>
+                    <th scope="col">Id instituição</th> -->
+                    <th scope="col">Ações</th>
                 </tr>
             </thead>
             <tbody>
@@ -78,21 +76,19 @@ $icon_delete = '<span class="material-symbols-outlined">delete</span>';
                         echo "<tr>";
                         echo "<td>".$user_data['id_professor']."</td>";
                         echo "<td>".$user_data['professor_nome_completo']."</td>";
-                        echo "<td>".$user_data['professor_data_nascimento']."</td>";
+                        // echo "<td>".$user_data['professor_data_nascimento']."</td>";
+                        echo "<td>" . date("d/m/Y", strtotime($user_data['professor_data_nascimento'])) . "</td>";
                         echo "<td>".$user_data['professor_cpf']."</td>";
+                        echo "<td>".$user_data['professor_cep']."</td>";
                         echo "<td>".$user_data['professor_estado']."</td>";
                         echo "<td>".$user_data['professor_cidade']."</td>";
-                        echo "<td>".$user_data['professor_endereco']."</td>";
+                        echo "<td>".$user_data['professor_logradouro']."</td>";
+                        echo "<td>".$user_data['professor_bairro']."</td>";
+                        echo "<td>".$user_data['professor_numero']."</td>";
                         echo "<td>".$user_data['professor_matricula']."</td>";
-                        // echo "<td>".$user_data['titulacao_max']."</td>";
-                        // echo "<td>".$user_data['cidade']."</td>";
-                        // echo "<td>".$user_data['estado']."</td>";
-                        // echo "<td>".$user_data['logradouro']."</td>";
-                        // echo "<td>".$user_data['numero']."</td>";
-                        // echo "<td>".$user_data['bairro']."</td>";
-                        // echo "<td>".$user_data['complemento']."</td>";
-                        echo "<td>".$user_data['professor_senha_acesso']."</td>";
-                        echo "<td>".$user_data['id_instituicao']."</td>";
+                      
+                        // echo "<td>".$user_data['professor_senha_acesso']."</td>";
+                        // echo "<td>".$user_data['id_instituicao']."</td>";
                         echo "<td>
 
                         <a class='icon_editar' href='editar_professor.php?id_professor=$user_data[id_professor]'>

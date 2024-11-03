@@ -34,7 +34,7 @@ if (!isset($_SESSION['instituicao_email'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="edit_aluno.css?v=1.2">
+    <link rel="stylesheet" href="edit_aluno.css?v=1.3">
 
     <!-- ICONES DO GOOGLE -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
@@ -55,13 +55,16 @@ $icon_delete = '<span class="material-symbols-outlined">delete</span>';
                     <th scope="col">Nome</th>
                     <th scope="col">Data de nascimento</th>
                     <th scope="col">CPF</th>
+                    <th scope="col">CEP</th>
                     <th scope="col">Estado</th>
                     <th scope="col">Cidade</th>
-                    <th scope="col">Endereço</th>
+                    <th scope="col">Logradouro</th>
+                    <th scope="col">Bairro</th>
+                    <th scope="col">Número</th>
                     <th scope="col">Matricula</th>
-                    <th scope="col">Senha</th>
-                    <th scope="col">Id instituição</th>
-                    <th scope="col">...</th>
+                    <!-- <th scope="col">Senha</th>
+                    <th scope="col">Id instituição</th> -->
+                    <th scope="col">Ações</th>
                 </tr>
             </thead>
             <tbody>
@@ -71,14 +74,18 @@ $icon_delete = '<span class="material-symbols-outlined">delete</span>';
                         echo "<tr>";
                         echo "<td>".$user_data['id_aluno']."</td>";
                         echo "<td>".$user_data['aluno_nome_completo']."</td>";
-                        echo "<td>".$user_data['aluno_data_nascimento']."</td>";
+                        // echo "<td>".$user_data['aluno_data_nascimento']."</td>";
+                        echo "<td>" . date("d/m/Y", strtotime($user_data['aluno_data_nascimento'])) . "</td>";
                         echo "<td>".$user_data['aluno_cpf']."</td>";
+                        echo "<td>".$user_data['aluno_cep']."</td>";
                         echo "<td>".$user_data['aluno_estado']."</td>";
                         echo "<td>".$user_data['aluno_cidade']."</td>";
-                        echo "<td>".$user_data['aluno_endereco']."</td>";
+                        echo "<td>".$user_data['aluno_logradouro']."</td>";
+                        echo "<td>".$user_data['aluno_bairro']."</td>";
+                        echo "<td>".$user_data['aluno_numero']."</td>";
                         echo "<td>".$user_data['aluno_matricula']."</td>";
-                        echo "<td>".$user_data['aluno_senha_acesso']."</td>";
-                        echo "<td>".$user_data['id_instituicao']."</td>";
+                        // echo "<td>".$user_data['aluno_senha_acesso']."</td>";
+                        // echo "<td>".$user_data['id_instituicao']."</td>";
                         echo "<td>
 
                         <a class='icon_editar' href='editar_aluno.php?id_aluno=$user_data[id_aluno]'>

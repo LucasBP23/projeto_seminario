@@ -34,7 +34,7 @@ if (!isset($_SESSION['instituicao_email'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="edit_secretaria.css?v=1.1">
+    <link rel="stylesheet" href="edit_secretaria.css?v=1.2">
 
     <!-- Icone do google -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />

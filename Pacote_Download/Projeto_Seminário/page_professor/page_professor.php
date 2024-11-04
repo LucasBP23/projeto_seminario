@@ -28,7 +28,7 @@ $professor_nome_completo = isset($_SESSION['professor_nome_completo']) ? $_SESSI
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página do Professor</title>
-    <link rel="stylesheet" href="style.css?v=1.3">
+    <link rel="stylesheet" href="style.css?v=1.4">
     <link rel="icon" type="image/x-icon" href="../images/UniSGE.png"> 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
@@ -72,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['turma_materia'])) {
     $id_turma_professor_materia = intval($_POST['turma_materia']);
 
     // Buscar alunos da turma
-    $sql_alunos = "SELECT a.id_aluno, a.aluno_nome_completo 
+    $sql_alunos = "SELECT a.id_aluno, a.aluno_nome_completo, a.aluno_matricula 
                    FROM matricula m
                    JOIN aluno a ON m.id_aluno = a.id_aluno
                    JOIN turma_professor_materia tm ON m.id_turma = tm.id_turma
@@ -82,65 +82,62 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['turma_materia'])) {
     $alunos = mysqli_fetch_all($result_alunos, MYSQLI_ASSOC);
 ?>
 
-
-        <div class="accordion">
-                <div class="accordion-header"> <?php foreach ($alunos as $aluno) : ?>
-                    <tr>
-                        <td><?= htmlspecialchars($aluno['aluno_nome_completo']) ?></td>
-                        <?php
-                        // Buscar as notas do aluno
-                        $sql_notas = "SELECT * FROM nota 
-                                      WHERE id_aluno = {$aluno['id_aluno']} 
-                                      AND id_turma_professor_materia = $id_turma_professor_materia";
-                        $result_notas = mysqli_query($conexao, $sql_notas);
-                        $notas_aluno = mysqli_fetch_all($result_notas, MYSQLI_ASSOC);
-                        $notas = [];
-                        foreach ($notas_aluno as $nota) {
-                            $notas[$nota['numero_nota']] = $nota['nota'];
-                        }
-                        ?>
-                        </div>
+<div class="accordion">
+    <?php foreach ($alunos as $aluno) : ?>
+        <div class="accordion-header">
+            <?= htmlspecialchars($aluno['aluno_matricula']) . " - " . htmlspecialchars($aluno['aluno_nome_completo']) ?>
+        </div>
         <div class="accordion-content">
-     
-
-    <form method="POST" action="salvar_notas.php">
-        <input type="hidden" name="id_turma_professor_materia" value="<?= $id_turma_professor_materia ?>">
-        <table>
-            <thead>
-                <tr>
-                
-                    <th>Nota 1</th>
-                    <th>Nota 2</th>
-                    <th>Nota 3</th>
-                    <th>Nota 4</th>
-                    <th>Média</th>
-                    <th>Situação</th>
-                    <th>Ações</th>
-                </tr>
-            </thead>
-            <tbody>
-               
-                        
-                        <td><input type="number" name="notas[<?= $aluno['id_aluno'] ?>][1]" step="0.01" value="<?= $notas[1] ?? '' ?>"></td>
-                        <td><input type="number" name="notas[<?= $aluno['id_aluno'] ?>][2]" step="0.01" value="<?= $notas[2] ?? '' ?>"></td>
-                        <td><input type="number" name="notas[<?= $aluno['id_aluno'] ?>][3]" step="0.01" value="<?= $notas[3] ?? '' ?>"></td>
-                        <td><input type="number" name="notas[<?= $aluno['id_aluno'] ?>][4]" step="0.01" value="<?= $notas[4] ?? '' ?>"></td>
-                        <td>
-                            <!-- Exibir média e status -->
+            <form method="POST" action="salvar_notas.php">
+                <input type="hidden" name="id_turma_professor_materia" value="<?= $id_turma_professor_materia ?>">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nota 1</th>
+                            <th>Nota 2</th>
+                            <th>Nota 3</th>
+                            <th>Nota 4</th>
+                            <th>Média</th>
+                            <th>Situação</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
                             <?php
-                            $media = calcularMedia($aluno['id_aluno'], $id_turma_professor_materia);
-                            echo number_format($media, 2);
-                            
+                            // Buscar as notas do aluno
+                            $sql_notas = "SELECT * FROM nota 
+                                          WHERE id_aluno = {$aluno['id_aluno']} 
+                                          AND id_turma_professor_materia = $id_turma_professor_materia";
+                            $result_notas = mysqli_query($conexao, $sql_notas);
+                            $notas_aluno = mysqli_fetch_all($result_notas, MYSQLI_ASSOC);
+                            $notas = [];
+                            foreach ($notas_aluno as $nota) {
+                                $notas[$nota['numero_nota']] = $nota['nota'];
+                            }
                             ?>
-                        </td>
-                        <td> <?php echo verificarStatus($media); ?></td>
-                        <td> <button type="submit" class="atualizar_notas">Atualizar Notas</button></td>
-                    </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-       
-    </form>
+                            <td><input type="number" name="notas[<?= $aluno['id_aluno'] ?>][1]" step="0.01" value="<?= $notas[1] ?? '' ?>"></td>
+                            <td><input type="number" name="notas[<?= $aluno['id_aluno'] ?>][2]" step="0.01" value="<?= $notas[2] ?? '' ?>"></td>
+                            <td><input type="number" name="notas[<?= $aluno['id_aluno'] ?>][3]" step="0.01" value="<?= $notas[3] ?? '' ?>"></td>
+                            <td><input type="number" name="notas[<?= $aluno['id_aluno'] ?>][4]" step="0.01" value="<?= $notas[4] ?? '' ?>"></td>
+                            <td>
+                                <!-- Exibir média e status -->
+                                <?php
+                                $media = calcularMedia($aluno['id_aluno'], $id_turma_professor_materia);
+                                echo number_format($media, 2);
+                                ?>
+                            </td>
+                            <td><?php echo verificarStatus($media); ?></td>
+                            <td><button type="submit" class="atualizar_notas">Atualizar Notas</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    <?php endforeach; ?>
+</div>
+
+        
 <?php
 }
 

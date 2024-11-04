@@ -3,39 +3,7 @@
 body{
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
-  margin: 20px;
-}
-
-.accordion {
-  background-color: white;
-  border: 1px solid #ccc;
-  margin: 10px 0;
-}
-.accordion-header {
-  padding: 10px;
-  cursor: pointer;
-  border-bottom: 1px solid #ccc;
-  background-color: rgb(2, 31, 37);
-  color: white;
-}
-.accordion-content {
-  display: none;
-  padding: 10px;
-  border-top: 1px solid #ccc;
-}
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 10px;
-}
-th, td {
-  border: 1px solid #ccc;
-  padding: 8px;
-  text-align: center;
-}
-button {
-  margin: 5px;
+  
 }
 
 .topo {
@@ -96,73 +64,18 @@ button {
  border-bottom: 2px solid rgb(206, 184, 85);
 }
 
-.principal {
-  top: 0;
-  left: 0;
-  position: fixed;
-  background: rgb(233, 232, 212);
-  top: 50px;
-  
-  float: left;
-  width: 100%;
-  height: 100%;
 
-}
-
-.alunos_notas{
-  margin-top: 30px;
-  
-  width: 95%;
-  height: 90%;
-  margin-left: 1.5%;
-  background: rgb(235, 234, 229);
-  backdrop-filter: blur(20px); /* deixa embaçado*/
-     box-shadow: 0 0 30px rgba(0, 0, 0, .5); 
-     padding: 15px;
-
-}
-
-.selecao{
- 
-  display: flex;
-  justify-content: center;
-  align-items: center;
- 
-}
-
-/* Icones do google google */
-
-.material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 200,
-  'GRAD' 0,
-  'opsz' 20
-}
-
-.atualizar_notas{
-background-color: blue;
-color: white;
-padding: 8px;
-border: 1px solid black;
-cursor: pointer;
-}
-
-.atualizar_notas:hover{
-  background-color: white;
-  color: blue;
-  border: 1px solid blue;
-}
 .dados{
   margin: 5px;
+background: rgb(10, 96, 117);
   
 }
 
 .table{
   color: white;
- 
+  background: rgba(0, 0, 0, 0.5);
   padding: 30px;
-  border-radius: 15px 15px 0 0 ;
+  border-radius: 15px 15px 15px 15px ;
   width: 100%;
   text-align: center;
   border: 3px groove;

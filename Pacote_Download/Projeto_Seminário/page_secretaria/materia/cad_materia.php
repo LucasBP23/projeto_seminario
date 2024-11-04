@@ -39,9 +39,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $id_materia = $_POST['id_materia'];
         $novo_nome = $_POST['novo_nome'];
 
-        $sql = "UPDATE materia SET materia_nome='$novo_nome' WHERE id_materia=$id_materia";
-        if (mysqli_query($conexao, $sql)) {
-            $mensagem_sucesso = "Matéria atualizada com sucesso!";
+        // Verifica se a nova matéria já existe para o mesmo curso
+        $sql_materia_atual = "SELECT * FROM materia WHERE id_materia = $id_materia";
+        $resultado_materia_atual = mysqli_query($conexao, $sql_materia_atual);
+        $materia_atual = mysqli_fetch_assoc($resultado_materia_atual);
+        
+        $id_curso = $materia_atual['id_curso']; // Pega o id do curso da matéria atual
+
+        $verifica_novo_nome = "SELECT * FROM materia WHERE materia_nome = '$novo_nome' AND id_curso = $id_curso AND id_materia != $id_materia";
+        $resultado_novo_nome = mysqli_query($conexao, $verifica_novo_nome);
+        
+        if (mysqli_num_rows($resultado_novo_nome) > 0) {
+            echo "<script>alert('Este nome de matéria já existe para o curso selecionado!');</script>";
+        } else {
+            $sql = "UPDATE materia SET materia_nome='$novo_nome' WHERE id_materia=$id_materia";
+            if (mysqli_query($conexao, $sql)) {
+                $mensagem_sucesso = "Matéria atualizada com sucesso!";
+            } else {
+                echo "Erro ao atualizar matéria: " . mysqli_error($conexao);
+            }
         }
     } elseif (isset($_POST['excluir'])) {
         $id_materia = $_POST['id_materia'];
@@ -49,15 +65,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $sql = "DELETE FROM materia WHERE id_materia=$id_materia";
         mysqli_query($conexao, $sql);
     }
-}
-
-// Listar matérias se um curso foi selecionado
+    // Listar matérias se um curso foi selecionado
 $materias = [];
 if (isset($_POST['id_curso_selecionado'])) {
     $id_curso_selecionado = $_POST['id_curso_selecionado'];
     $sql_materias = "SELECT * FROM materia WHERE id_curso = $id_curso_selecionado";
     $materias = mysqli_query($conexao, $sql_materias);
 }
+}
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -125,7 +143,7 @@ if (isset($_POST['id_curso_selecionado'])) {
                         </form>
                         <form method="POST" action="" class="d-inline">
                             <input type="hidden" name="id_materia" value="<?php echo $materia['id_materia']; ?>">
-                            <button type="submit" name="excluir" class="btn btn-danger btn-sm">Excluir</button>
+                            <button type="submit" name="excluir" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja excluir esta matéria desse curso?');">Excluir</button>
                         </form>
                     </td>
                 </tr>

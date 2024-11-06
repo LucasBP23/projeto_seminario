@@ -59,13 +59,16 @@
     <title>Document</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="icon" type="image/x-icon" href="Images/UniSGE-removebg-preview.png"> <!--Coloca o logo no topo da guia da página-->
-    <link rel="stylesheet" href="editar_secretaria.css?v=1.1">
+    <link rel="stylesheet" href="editar_secretaria.css?v=1.4">
    
       
         
 </head>
 <body>
-<a href="edit_secretaria.php" style="color: white; background: red; position:relative; z-index: 10;">Voltar</a>
+    <div class="voltar">
+        <a href="edit_secretaria.php" style="position:relative; z-index: 10;">&#x2B05;</a>
+    </div>
+
     <header class="topo">
     
 </header>
@@ -113,6 +116,8 @@
 
 
 
-
+<!--código para inserir icones do seguinte site: https://ionic.io/ionicons/usage-->
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script> 
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>

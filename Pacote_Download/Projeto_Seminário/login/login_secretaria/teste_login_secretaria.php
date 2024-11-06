@@ -42,7 +42,7 @@
               $_SESSION['id_instituicao'] = $user_data['id_instituicao'];  // Armazenar o id_instituicao da secretaria logada
               $_SESSION['instituicao_nome'] = $user_data['instituicao_nome']; 
     
-              header('Location: ../../page_secretaria/index.php');
+              header('Location: ../../page_secretaria/page_secretaria.php');
                 exit(); 
             } else {
                 // Senha incorreta, ele não acessa e volta para a area de login.

@@ -66,7 +66,8 @@ $turmas_result = mysqli_query($conexao, $turmas_sql);
             <select class="form-control" id="id_aluno" name="id_aluno" required>
                 <option value="">Escolha o aluno</option>
                 <?php while ($aluno = mysqli_fetch_assoc($alunos_result)) : ?>
-                    <option value="<?= $aluno['id_aluno'] ?>"><?= $aluno['aluno_nome_completo'] ?></option>
+                    <option value="<?= $aluno['id_aluno'] ?>">
+                <?= $aluno['aluno_matricula'] . " - " . $aluno['aluno_nome_completo'] ?>
                 <?php endwhile; ?>
             </select>
         </div>

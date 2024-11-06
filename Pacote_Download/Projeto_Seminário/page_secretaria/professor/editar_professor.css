@@ -36,6 +36,21 @@ html, body {
     
  }
 
+ .voltar a{
+    color: white;
+    background: none;
+    margin-left: 15px;
+    text-decoration: none;
+    
+        
+ }
+
+ .voltar a:hover{
+    color: rgb(143, 127, 25);
+   /* text-decoration: underline;
+         */
+ }
+
  legend{
     text-align: center;
     border: 2px;

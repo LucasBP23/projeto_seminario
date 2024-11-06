@@ -63,14 +63,16 @@
     <title>Document</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="icon" type="image/x-icon" href="Images/UniSGE-removebg-preview.png"> <!--Coloca o logo no topo da guia da página-->
-    <link rel="stylesheet" href="editar_professor.css">
+    <link rel="stylesheet" href="editar_professor.css?v=1.3">
    
       
         
 </head>
 <body>
     <header class="topo">
-        <a href="edit_professor.php">Voltar</a>
+        <div class="voltar">
+            <a href="edit_professor.php">&#x2B05;</a>
+        </div>
     <h1>Formulário - Cadastro de Professor</h1>
 </header>
     <div class="box">  
@@ -171,5 +173,7 @@
 
 
     <script src="cad_professor.js?v=1.4"></script>
+
+
 </body>
 </html>

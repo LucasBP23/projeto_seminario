@@ -28,7 +28,7 @@ $professor_nome_completo = isset($_SESSION['professor_nome_completo']) ? $_SESSI
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página do Professor</title>
-    <link rel="stylesheet" href="style.css?v=1.4">
+    <link rel="stylesheet" href="style.css?v=1.5">
     <link rel="icon" type="image/x-icon" href="../images/UniSGE.png"> 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
@@ -86,6 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['turma_materia'])) {
     <?php foreach ($alunos as $aluno) : ?>
         <div class="accordion-header">
             <?= htmlspecialchars($aluno['aluno_matricula']) . " - " . htmlspecialchars($aluno['aluno_nome_completo']) ?>
+            <ion-icon name="chevron-down-outline" class="accordion-arrow"></ion-icon>
         </div>
         <div class="accordion-content">
             <form method="POST" action="salvar_notas.php">
@@ -176,7 +177,12 @@ function verificarStatus($media) {
     headers.forEach(header => {
         header.addEventListener('click', () => {
             const content = header.nextElementSibling;
+            
+            // Alterna a visibilidade do conteúdo
             content.style.display = content.style.display === 'block' ? 'none' : 'block';
+
+            // Adiciona ou remove a classe 'active' no cabeçalho para rotacionar a seta
+            header.classList.toggle('active');
         });
     });
 </script>

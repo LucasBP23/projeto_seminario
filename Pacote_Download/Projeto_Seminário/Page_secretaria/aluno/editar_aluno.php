@@ -62,14 +62,16 @@
     <title>Document</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="icon" type="image/x-icon" href="Images/UniSGE-removebg-preview.png"> <!--Coloca o logo no topo da guia da página-->
-    <link rel="stylesheet" href="editar_aluno.css">
+    <link rel="stylesheet" href="editar_aluno.css?v=1.2">
    
       
         
 </head>
 <body>
     <header class="topo">
-        <a href="edit_aluno.php">Voltar</a>
+        <div class="voltar">
+            <a href="edit_aluno.php">&#x2B05;</a>
+        </div>
     <h1>Formulário - Cadastro de aluno</h1>
 </header>
     <div class="box">  
@@ -170,5 +172,9 @@
 
 
     <script src="cad_aluno.js?v=1.8"></script>
+
+    <!--código para inserir icones do seguinte site: https://ionic.io/ionicons/usage-->
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script> 
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>

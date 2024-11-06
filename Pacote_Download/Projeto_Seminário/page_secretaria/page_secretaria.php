@@ -48,7 +48,7 @@
     </div>
 
     <div class="f_topo">
-        <a href="../sair.php">&#x2B05; Sair</a>
+        <a href="sair_secretaria.php">&#x2B05; Sair</a>
     </div>
 
 </header>
@@ -89,10 +89,10 @@
         <a href="turma/listar_editar_turmas.php" target="iframe-menu">&#x270F; Lista de turmas</a>
         <br>
         <hr>
-        <a href="matricular_professor/turma_professor_materia.php" target="iframe-menu"><ion-icon name="add-circle-outline"></ion-icon> Matricular professor</a>
+        <a href="alocar_professor/turma_professor_materia.php" target="iframe-menu"><ion-icon name="add-circle-outline"></ion-icon> Alocar professor</a>
         <br>
         <hr>
-        <a href="matricular_professor/gerenciar_relacoes.php" target="iframe-menu">&#x270F; Editar relação professor</a>
+        <a href="alocar_professor/gerenciar_relacoes.php" target="iframe-menu">&#x270F; Editar relação professor</a>
         <br>
         
         <hr>

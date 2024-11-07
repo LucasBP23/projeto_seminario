@@ -1,8 +1,10 @@
 <?php 
     session_start();
-
-        unset($_SESSION['instituicao_email']); // Caso não existra registro com aquele email ou senha vou mandar destruir qualquer variavel que tenha session email e session senha
+        // Remove todas as variáveis de sessão relacionadas a secretaria
+        unset($_SESSION['instituicao_email']); 
         unset($_SESSION['instituicao_senha_acesso']);
+
+        // Redireciona para a página de login da secretaria
         header('Location: ../login/login_secretaria/login_secretaria.html');
 
 ?>

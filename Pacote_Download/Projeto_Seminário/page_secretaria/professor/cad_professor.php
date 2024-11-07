@@ -26,8 +26,8 @@
                         
                         <input type="text" name="professor_nome_completo" id="professor_nome_completo" class="inputUser" required>
                         <label for="professor_nome_completo" class="labelInput">Nome completo: </label>
-
                     </div>
+                    
                     <br><br>
                     <div class="inputBox">
                     <label for="professor_data_nascimento"><b>Data de Nascimento:</b></label>

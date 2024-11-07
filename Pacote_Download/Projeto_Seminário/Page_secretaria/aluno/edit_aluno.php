@@ -72,9 +72,8 @@ $icon_delete = '<span class="material-symbols-outlined">delete</span>';
                     while($user_data = mysqli_fetch_assoc($result))
                     {
                         echo "<tr>";
-                        // echo "<td>".$user_data['id_aluno']."</td>";
+                       
                         echo "<td>".$user_data['aluno_nome_completo']."</td>";
-                        // echo "<td>".$user_data['aluno_data_nascimento']."</td>";
                         echo "<td>" . date("d/m/Y", strtotime($user_data['aluno_data_nascimento'])) . "</td>";
                         echo "<td>".$user_data['aluno_cpf']."</td>";
                         echo "<td>".$user_data['aluno_cep']."</td>";
@@ -84,16 +83,14 @@ $icon_delete = '<span class="material-symbols-outlined">delete</span>';
                         echo "<td>".$user_data['aluno_bairro']."</td>";
                         echo "<td>".$user_data['aluno_numero']."</td>";
                         echo "<td>".$user_data['aluno_matricula']."</td>";
-                        // echo "<td>".$user_data['aluno_senha_acesso']."</td>";
-                        // echo "<td>".$user_data['id_instituicao']."</td>";
                         echo "<td>
 
                         <a class='icon_editar' href='editar_aluno.php?id_aluno=$user_data[id_aluno]'>
                         $icon_editar
-                    </a>
-                    <a class='icon_delete' href='delete_aluno.php?id_aluno=$user_data[id_aluno]' onclick='return confirm(\"Tem certeza que deseja deletar este aluno(a)?\");'>
-                        $icon_delete
-                    </a>
+                        </a>
+                        <a class='icon_delete' href='delete_aluno.php?id_aluno=$user_data[id_aluno]' onclick='return confirm(\"Tem certeza que deseja deletar este aluno(a)?\");'>
+                            $icon_delete
+                        </a>
                     </td>";
                         echo "</tr>";
                     }   

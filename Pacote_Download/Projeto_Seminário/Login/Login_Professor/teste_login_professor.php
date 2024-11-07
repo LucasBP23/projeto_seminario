@@ -10,7 +10,7 @@ if (isset($_POST['submit']) && !empty($_POST['professor_matricula']) && !empty($
 
     //VERIFICANDO SE ESSES PARAMETROS EXISTEM NO BANCO DE DADOS
     $sql = "SELECT * FROM professor WHERE professor_matricula = '$professor_matricula'";
-    // $sql = "SELECT * FROM professor WHERE professor_matricula = '$professor_matricula'";
+    
     $result = $conexao->query($sql); // essa conexao foi feita no arquivo config.php
 
     if (mysqli_num_rows($result) < 1) {

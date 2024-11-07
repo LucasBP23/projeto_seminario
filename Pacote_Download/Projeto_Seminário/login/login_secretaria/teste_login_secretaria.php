@@ -1,9 +1,11 @@
+<!-- VERIFICA O LOGIN DA SECRETARIA -->
+
 <?php 
-    // SEMPRE QUE FOR TRABALHAR COM SESSÕES, TEM QUE INICIAR A SESSÃO ATRAVES DESSA TAG
+    //INICIANDO SESSÃO
     session_start();
     
 
-// print_r($_REQUEST);  // São os parametros que estão vindo lá do formulario do meu login
+// São os parametros que estão vindo lá do formulario do meu login
     if(isset($_POST['submit']) && !empty($_POST['instituicao_email']) && !empty($_POST['instituicao_senha_acesso'])) // se existir minha variavel post submit e o campo email e senha não estiverem vazio...
     {
         // ... ele vai deixar acessar o meu sistema...
@@ -54,11 +56,9 @@
 ?>
 
 <?php 
-
-//VERIFICANDO SE ESSES PARAMETROS EXISTEM NO BANCO DE DADOS
    
 } else {
-    // Caso não exista, ele não acessa e volta para a area de login.
+     // Caso os campos não estejam preenchidos, redireciona para a área de login do aluno
     header('Location: login_aluno.html');
    
 }

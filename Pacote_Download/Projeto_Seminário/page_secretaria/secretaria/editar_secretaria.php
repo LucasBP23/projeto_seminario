@@ -61,14 +61,14 @@
     <title>Formulário para editar os dados da secretaria</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="icon" type="image/x-icon" href="Images/UniSGE-removebg-preview.png"> <!--Coloca o logo no topo da guia da página-->
-    <link rel="stylesheet" href="editar_secretaria.css?v=1.4">
+    <link rel="stylesheet" href="editar_secretaria.css?v=1.5">
    
       
         
 </head>
 <body>
     <div class="voltar">
-        <a href="edit_secretaria.php" style="position:relative; z-index: 10;">&#x2B05;</a>
+        <a href="edit_secretaria.php" style="position:relative; z-index: 10; font-size: 25px;">&#x2B05;</a>
     </div>
 
     <header class="topo">

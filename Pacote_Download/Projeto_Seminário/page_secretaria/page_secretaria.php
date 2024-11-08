@@ -109,7 +109,7 @@
 
     <div class="principal">
    
-        <iframe id="iframe1" src="" width="80%" height="100%" frameborder="0" name="iframe-menu" title="Iframe-menu"></iframe>
+        <iframe id="iframe1" src="secretaria/pagina_inicial.html" width="80%" height="100%" frameborder="0" name="iframe-menu" title="Iframe-menu"></iframe>
     
 
     </div>

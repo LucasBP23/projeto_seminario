@@ -41,7 +41,7 @@ html, body {
     background: none;
     margin-left: 15px;
     text-decoration: none;
-    
+    font-size: 25px;
         
  }
 
@@ -113,8 +113,8 @@ html, body {
 .inputUser:focus ~ .labelInput,
 .inputUser:valid ~ .labelInput {
     top: -20px;
-    font-size: 13px;
-    color: #895F5E;
+    
+    color: black;
     font-weight: bold;
 }
 

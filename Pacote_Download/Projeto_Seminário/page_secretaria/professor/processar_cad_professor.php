@@ -1,3 +1,5 @@
+<!-- PROCESSA O CADASTRO DO PROFESSOR -->
+
 <?php 
 
 session_start(); 
@@ -5,10 +7,9 @@ session_start();
 
 
     if(isset($_POST['submit'])) // Se houver uma váriavel submit ele vai salvar os dados
-    // primeiro tem que verificar um por um:
+   
     {
 
-    
       //Incluindo a conexão com o arquivo config.php que faz conexão com o banco de dados
       include_once('../../config.php');
 
@@ -55,11 +56,17 @@ $id_instituicao = $_SESSION['id_instituicao'];
 //   print_r("<br>");
 //   print_r('CPF: ' . $_POST['professor_cpf']);
 //   print_r("<br>");
+//   print_r('CEP: ' . $_POST['professor_cep']);
+//   print_r("<br>");
 //   print_r('Estado: ' . $_POST['professor_estado']);
 //   print_r("<br>");
 //   print_r('Cidade: ' . $_POST['professor_cidade']);
 //   print_r("<br>");
-//   print_r('Endereço: ' . $_POST['professor_endereco']);
+//   print_r('Endereço: ' . $_POST['professor_logradouro']);
+//   print_r("<br>");
+//   print_r('Bairro: ' . $_POST['professor_bairro']);
+//   print_r("<br>");
+//   print_r('Número: ' . $_POST['professor_numero']);
 //   print_r("<br>");
 //   print_r('Matrícula: ' . $professor_matricula);
  
@@ -77,7 +84,7 @@ if (mysqli_num_rows($resultado) > 0) {
             window.location='cad_professor.php';
           </script>";
 } else {
-// $conexao é do arquivo config.php, depois fical igual ao insert into do banco de dados, primeiro o comando, depois a tabela, depois as colunas, depois os valores.
+// $conexao é do arquivo config.php
 $query = "INSERT INTO professor (professor_nome_completo, professor_data_nascimento, professor_cpf, professor_cep, professor_estado, professor_cidade, professor_logradouro, professor_bairro, professor_numero, professor_matricula, professor_senha_acesso, id_instituicao) VALUES ('$professor_nome_completo', '$professor_data_nascimento', '$professor_cpf', '$professor_cep', '$professor_estado', '$professor_cidade', '$professor_logradouro', '$professor_bairro', '$professor_numero', '$professor_matricula', '$professor_senha_hash', '$id_instituicao')";
 
 
@@ -85,8 +92,7 @@ $query = "INSERT INTO professor (professor_nome_completo, professor_data_nascime
 if (mysqli_query($conexao, $query)) {
     // echo "<script>alert('Usuário não encontrado.');</script>"; // Mensagem de erro
     echo "<script>alert('Professor(a) cadastrado com sucesso! Matrícula: $professor_matricula, Senha: $professor_senha'); window.location='cad_professor.php'</script>";
-//     // Redirecionar para uma página, se necessário
-//     // header("Location: listar_professores.php");
+
 } else {
     echo "<script>alert('Erro ao cadastrar o(a) professor(a): " . mysqli_error($conexao). " '); window.location='cad_professor.php'</script>";
 

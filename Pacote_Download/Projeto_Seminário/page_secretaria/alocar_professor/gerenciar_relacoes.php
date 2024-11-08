@@ -1,3 +1,5 @@
+<!-- PERMITE VISUALIZAR A LISTA DE PROFESSORES ALOCADOS EM TURMA E MATERIAS ESPECIFICAS -->
+
 <?php
 session_start();
 include('../../config.php');
@@ -25,8 +27,8 @@ if (isset($_GET['excluir'])) {
     }
 }
 
-// Carregar todas as relações
-// Carregar todas as relações
+
+// Carrega todas as relações
 $relacoes_sql = "SELECT tpm.id_turma_professor_materia, t.turma_nome, m.materia_nome AS nome_materia, p.professor_nome_completo AS nome_professor, p.professor_cpf
                  FROM turma_professor_materia tpm
                  JOIN turma t ON tpm.id_turma = t.id_turma

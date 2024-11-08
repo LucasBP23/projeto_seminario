@@ -71,7 +71,7 @@ button {
   text-align: left;
   align-items: center;
   padding-left: 10px;
-  line-height: 1px; /* Ajuste conforme necessário */
+  line-height: 1px;
   color: rgb(255, 255, 255);
   flex: 1;
   height: 35PX;
@@ -86,20 +86,16 @@ button {
   text-align: center;
   flex: 1;
   margin-right: 30%;
-  /* margin-left: 1000px; */
   text-decoration: none;
   justify-content: center;
 }
 
 .f_topo a{
   color: rgb(255, 255, 255);
-  /* display:flex; */
   align-items: center;
   gap: 10px; /* Espaçamento entre os itens */
   text-align: right;
-  /* flex: 1; */
   margin-right: 30px;
-  /* margin-left: 1000px; */
   text-decoration: none;
   border-bottom: 2px solid white;
 }
@@ -143,7 +139,7 @@ button {
  
 }
 
-/* Icones do google google */
+/* Icones do google */
 
 .material-symbols-outlined {
   font-variation-settings:
@@ -190,5 +186,5 @@ thead{
 
 td,th {
   padding: 12px;
-  border: 1px solid #ddd; /* Adiciona borda às células */
+  border: 1px solid #ddd; 
 }

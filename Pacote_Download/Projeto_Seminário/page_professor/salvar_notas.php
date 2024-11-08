@@ -1,7 +1,8 @@
+<!-- ATUALIZA A NOTA -->
+
 <?php
 include_once('../config.php');
 
-// salvar_notas.php
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $id_turma_professor_materia = intval($_POST['id_turma_professor_materia']);
@@ -15,7 +16,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             // Verifica se a nota é válida
             if ($nota < 0 || $nota > 10) {
-                // Pode redirecionar de volta com uma mensagem de erro ou tratar como preferir
                 continue; // Pula para o próximo loop
             }
 

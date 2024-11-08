@@ -1,3 +1,5 @@
+<!-- LISTA DE ALUNOS JÁ MATRICULADOS -->
+
 <?php
 session_start();
 include('../../config.php');
@@ -29,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 
- // Transferir aluno
+ // Transfere aluno
  if (isset($_POST['transferir'])) {
     $id_matricula = $_POST['id_matricula'];
     $nova_turma = $_POST['nova_turma'];

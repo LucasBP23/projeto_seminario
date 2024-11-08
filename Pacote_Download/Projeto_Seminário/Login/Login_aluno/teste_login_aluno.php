@@ -1,5 +1,7 @@
+<!-- FAZ O TESTE PARA VERIFICAR SE OS DADOS UTILIZADOS NA ÁREA DE LOGIN CONDIZ COM O BANCO DE DADOS PARA EFETUAR A CONEXÃO OU VOLTAR PARA ÁREA DE LOGIN -->
+
 <?php  
-// SEMPRE QUE FOR TRABALHAR COM SESSÕES, TEM QUE INICIAR A SESSÃO ATRAVES DESSA TAG
+// Inicia a sessão
 session_start();
 
 if (isset($_POST['submit']) && !empty($_POST['aluno_matricula']) && !empty($_POST['aluno_senha_acesso'])) {
@@ -29,7 +31,7 @@ if (isset($_POST['submit']) && !empty($_POST['aluno_matricula']) && !empty($_POS
             $_SESSION['aluno_nome_completo'] = $user_data['aluno_nome_completo'];
 
             header('Location: ../../page_aluno/page_aluno.php');
-            exit(); // teste
+            exit(); 
         } else {
             // Senha incorreta
             unset($_SESSION['aluno_matricula']);

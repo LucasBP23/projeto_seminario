@@ -1,3 +1,5 @@
+<!-- FORMULÁRIO PARA ATUALIZAR OS DADOS DO ALUNO -->
+
 <?php 
 
     if(!empty($_GET['id_aluno'])) // Se não estiver vazio minha variavel/meu parametro id
@@ -30,8 +32,7 @@
             $aluno_logradouro = $user_data['aluno_logradouro'];
             $aluno_bairro = $user_data['aluno_bairro'];
             $aluno_numero =  $user_data['aluno_numero'];
-            // Capturar o id_instituicao da sessão
-            // $id_instituicao = $_SESSION['id_instituicao'];
+           
            
         }
         
@@ -59,7 +60,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Formulário do aluno</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="icon" type="image/x-icon" href="Images/UniSGE-removebg-preview.png"> <!--Coloca o logo no topo da guia da página-->
     <link rel="stylesheet" href="editar_aluno.css?v=1.2">

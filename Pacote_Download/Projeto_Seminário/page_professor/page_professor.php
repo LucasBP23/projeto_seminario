@@ -1,3 +1,5 @@
+<!-- PÁGINA DO PROFESSOR -->
+
 <?php  
 session_start();
 include_once('../config.php');
@@ -71,7 +73,7 @@ $professor_nome_completo = isset($_SESSION['professor_nome_completo']) ? $_SESSI
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['turma_materia'])) {
     $id_turma_professor_materia = intval($_POST['turma_materia']);
 
-    // Buscar alunos da turma
+    // Busca alunos da turma
     $sql_alunos = "SELECT a.id_aluno, a.aluno_nome_completo, a.aluno_matricula 
                    FROM matricula m
                    JOIN aluno a ON m.id_aluno = a.id_aluno
@@ -106,7 +108,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['turma_materia'])) {
                     <tbody>
                         <tr>
                             <?php
-                            // Buscar as notas do aluno
+                            // Busca as notas do aluno
                             $sql_notas = "SELECT * FROM nota 
                                           WHERE id_aluno = {$aluno['id_aluno']} 
                                           AND id_turma_professor_materia = $id_turma_professor_materia";
@@ -122,7 +124,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['turma_materia'])) {
                             <td><input type="number" name="notas[<?= $aluno['id_aluno'] ?>][3]" step="0.01" value="<?= $notas[3] ?? '' ?>"></td>
                             <td><input type="number" name="notas[<?= $aluno['id_aluno'] ?>][4]" step="0.01" value="<?= $notas[4] ?? '' ?>"></td>
                             <td>
-                                <!-- Exibir média e status -->
+                                <!-- Exibe média e status -->
                                 <?php
                                 $media = calcularMedia($aluno['id_aluno'], $id_turma_professor_materia);
                                 echo number_format($media, 2);

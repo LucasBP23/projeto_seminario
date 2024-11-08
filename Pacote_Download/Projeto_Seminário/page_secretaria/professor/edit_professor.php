@@ -1,5 +1,7 @@
+<!-- LISTA DE PROFESSORES CADASTRADOS -->
+
 <?php 
-    session_start();//teste
+    session_start();
     // Verificar se o usuário está logado
 if (!isset($_SESSION['instituicao_email'])) {
     // Se não estiver logado, redirecionar para a página de login
@@ -10,11 +12,11 @@ if (!isset($_SESSION['instituicao_email'])) {
 
     include_once('../../config.php');
 
-    $id_instituicao = $_SESSION['id_instituicao']; //teste
+    $id_instituicao = $_SESSION['id_instituicao'];
 
-        // $sql = "SELECT * FROM secretaria ORDER BY id_instituicao DESC";
+        
 
-        $sql = "SELECT * FROM professor WHERE id_instituicao = '$id_instituicao' ORDER BY professor_nome_completo ASC";//TESTE
+        $sql = "SELECT * FROM professor WHERE id_instituicao = '$id_instituicao' ORDER BY professor_nome_completo ASC";
 
 
         $result = $conexao->query($sql);
@@ -53,7 +55,7 @@ $icon_delete = '<span class="material-symbols-outlined">delete</span>';
             <thead>
                 <tr>
 
-                    <!-- <th scope="col">#</th> -->
+                   
                     <th scope="col">Nome</th>
                     <th scope="col">Data de nascimento</th>
                     <th scope="col">CPF</th>
@@ -64,8 +66,7 @@ $icon_delete = '<span class="material-symbols-outlined">delete</span>';
                     <th scope="col">Bairro</th>
                     <th scope="col">Número</th>
                     <th scope="col">Matricula</th>
-                    <!-- <th scope="col">Senha</th>
-                    <th scope="col">Id instituição</th> -->
+                   
                     <th scope="col">Ações</th>
                 </tr>
             </thead>
@@ -74,9 +75,9 @@ $icon_delete = '<span class="material-symbols-outlined">delete</span>';
                     while($user_data = mysqli_fetch_assoc($result))
                     {
                         echo "<tr>";
-                        // echo "<td>".$user_data['id_professor']."</td>";
+                        
                         echo "<td>".$user_data['professor_nome_completo']."</td>";
-                        // echo "<td>".$user_data['professor_data_nascimento']."</td>";
+                        
                         echo "<td>" . date("d/m/Y", strtotime($user_data['professor_data_nascimento'])) . "</td>";
                         echo "<td>".$user_data['professor_cpf']."</td>";
                         echo "<td>".$user_data['professor_cep']."</td>";
@@ -87,8 +88,6 @@ $icon_delete = '<span class="material-symbols-outlined">delete</span>';
                         echo "<td>".$user_data['professor_numero']."</td>";
                         echo "<td>".$user_data['professor_matricula']."</td>";
                       
-                        // echo "<td>".$user_data['professor_senha_acesso']."</td>";
-                        // echo "<td>".$user_data['id_instituicao']."</td>";
                         echo "<td>
 
                         <a class='icon_editar' href='editar_professor.php?id_professor=$user_data[id_professor]'>

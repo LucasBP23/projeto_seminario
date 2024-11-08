@@ -1,3 +1,5 @@
+<!-- LISTA DE ALUNOS CADASTRADOS -->
+
 <?php 
     session_start();//teste
     // Verificar se o usuário está logado
@@ -12,16 +14,13 @@ if (!isset($_SESSION['instituicao_email'])) {
 
     $id_instituicao = $_SESSION['id_instituicao']; //teste
 
-        // $sql = "SELECT * FROM secretaria ORDER BY id_instituicao DESC";
 
-        $sql = "SELECT * FROM aluno WHERE id_instituicao = '$id_instituicao' ORDER BY aluno_nome_completo ASC";//TESTE
+        $sql = "SELECT * FROM aluno WHERE id_instituicao = '$id_instituicao' ORDER BY aluno_nome_completo ASC";
 
 
         $result = $conexao->query($sql);
 
        
-
-        // print_r($result);
 
 ?>
 
@@ -33,7 +32,7 @@ if (!isset($_SESSION['instituicao_email'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Lista de alunos</title>
     <link rel="stylesheet" href="edit_aluno.css?v=1.3">
 
     <!-- ICONES DO GOOGLE -->
@@ -51,7 +50,7 @@ $icon_delete = '<span class="material-symbols-outlined">delete</span>';
         <table class="table">
             <thead>
                 <tr>
-                    <!-- <th scope="col">#</th> -->
+                    
                     <th scope="col">Nome</th>
                     <th scope="col">Data de nascimento</th>
                     <th scope="col">CPF</th>
@@ -62,8 +61,7 @@ $icon_delete = '<span class="material-symbols-outlined">delete</span>';
                     <th scope="col">Bairro</th>
                     <th scope="col">Número</th>
                     <th scope="col">Matricula</th>
-                    <!-- <th scope="col">Senha</th>
-                    <th scope="col">Id instituição</th> -->
+                    
                     <th scope="col">Ações</th>
                 </tr>
             </thead>

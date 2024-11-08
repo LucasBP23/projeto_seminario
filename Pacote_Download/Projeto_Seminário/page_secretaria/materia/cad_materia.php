@@ -1,3 +1,5 @@
+<!-- FAZ O CADASTRO DE MATÉRIA EM UM CURSO SELECIONADO -->
+
 <?php
 session_start();
 include('../../config.php');

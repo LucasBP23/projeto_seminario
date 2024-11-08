@@ -1,10 +1,10 @@
-
+<!-- FORMULÁRIO PARA O CADASTRO DO PROFESSOR -->
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Formulário para cadastro de professor</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="icon" type="image/x-icon" href="Images/UniSGE-removebg-preview.png"> <!--Coloca o logo no topo da guia da página-->
     <link rel="stylesheet" href="cad_professor.css?v=1.5">
@@ -95,13 +95,6 @@
                     <br><br><br>
                 
         
-
-                    <!-- <div class="inputBox">
-
-                        <input type="password" name="professor_senha_acesso" id="professor_senha_acesso" class="inputUser" required>
-                        <label for="professor_senha_acesso"class="labelInput">Senha: </label>
-                    </div>
-                    <br><br> -->
 
                     
     

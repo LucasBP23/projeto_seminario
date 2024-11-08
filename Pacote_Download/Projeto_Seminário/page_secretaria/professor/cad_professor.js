@@ -1,3 +1,5 @@
+// API CEP
+
 document.getElementById("professor_cep").addEventListener("blur", function() {
     let cep = this.value.replace(/\D/g, '');
     if (cep.length === 8) {

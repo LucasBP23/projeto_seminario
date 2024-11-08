@@ -1,3 +1,5 @@
+<!-- ATUALIZA AS ALTERAÇÕES NAS INFORMAÇÕES DO PROFESSOR -->
+
 <?php 
 
 include_once('../../config.php');
@@ -15,10 +17,7 @@ if(isset($_POST['update']))
             $professor_logradouro = addslashes($_POST['professor_logradouro']);
             $professor_bairro = addslashes($_POST['professor_bairro']);
             $professor_numero = addslashes($_POST['professor_numero']);
-            // $professor_matricula = str_pad(rand(0, 999999), 6, '0', STR_PAD_LEFT); // Gera matrícula aleatória
-            // $professor_senha = gerarSenha();
-            // $professor_senha_hash = password_hash($professor_senha, PASSWORD_DEFAULT); // Hash da senha
-
+          
            
 
 

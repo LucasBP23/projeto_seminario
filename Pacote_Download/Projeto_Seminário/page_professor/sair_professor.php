@@ -1,3 +1,4 @@
+<!-- FAZ LOGOUT DA PÁGINA DO PROFESSOR -->
 
 <?php 
 session_start();

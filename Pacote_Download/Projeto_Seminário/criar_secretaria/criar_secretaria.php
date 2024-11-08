@@ -1,5 +1,7 @@
+<!-- Usado para criar a secretaria -->
+
 <?php
-include('../config.php'); // Inclua a conexão com o banco de dados
+include('../config.php'); // Incluindo a conexão com o banco de dados
 
 // Definindo as informações do usuário
 $instituicao_nome = "Colégio Horizonte Brilhante";
@@ -26,6 +28,6 @@ if (mysqli_num_rows($verificar_email_result) > 0) {
     }
 }
 
-// Feche a conexão com o banco de dados
+// Fecha a conexão com o banco de dados
 mysqli_close($conexao);
 ?>

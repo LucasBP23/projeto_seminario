@@ -1,5 +1,7 @@
+<!-- FAZ O TESTE PARA VERIFICAR SE OS DADOS UTILIZADOS NA ÁREA DE LOGIN CONDIZ COM O BANCO DE DADOS PARA EFETUAR A CONEXÃO OU VOLTAR PARA ÁREA DE LOGIN -->
+
 <?php  
-// SEMPRE QUE FOR TRABALHAR COM SESSÕES, TEM QUE INICIAR A SESSÃO ATRAVES DESSA TAG
+// INICIA A SESSÃO
 session_start();
 
 if (isset($_POST['submit']) && !empty($_POST['professor_matricula']) && !empty($_POST['professor_senha_acesso'])) {

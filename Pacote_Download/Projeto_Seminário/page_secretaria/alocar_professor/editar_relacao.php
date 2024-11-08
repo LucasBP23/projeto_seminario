@@ -1,3 +1,5 @@
+<!-- PERMITE EDITAR A RELAÇÃO TURMA PROFESSOR MATÉRIA -->
+
 <?php
 session_start();
 include('../../config.php');
@@ -93,7 +95,7 @@ $professores_result = mysqli_query($conexao, $professores_sql);
             <select class="form-control" id="id_materia" name="id_materia" required>
                 <option value="">Escolha a matéria</option>
                 <?php
-                // Carregue as matérias disponíveis e selecione a atual
+                // Carrega as matérias disponíveis e selecione a atual
                 $materias_sql = "SELECT * FROM materia WHERE id_curso = (SELECT id_curso FROM turma WHERE id_turma = {$relacao['id_turma']})";
                 $materias_result = mysqli_query($conexao, $materias_sql);
                 while ($materia = mysqli_fetch_assoc($materias_result)) : ?>

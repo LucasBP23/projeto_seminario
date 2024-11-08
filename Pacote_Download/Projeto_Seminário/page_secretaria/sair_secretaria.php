@@ -1,3 +1,5 @@
+<!-- FAZ O LOGOUT DA PÁGINA DA SECRETARIA -->
+
 <?php 
     session_start();
         // Remove todas as variáveis de sessão relacionadas a secretaria

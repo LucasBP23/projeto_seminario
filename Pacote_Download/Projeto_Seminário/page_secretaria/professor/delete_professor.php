@@ -1,3 +1,5 @@
+<!-- DELETA UM PROFESSOR SELECIONADO -->
+
 <?php 
 
     if(!empty($_GET['id_professor'])) // Se não estiver vazio minha variavel/meu parametro id

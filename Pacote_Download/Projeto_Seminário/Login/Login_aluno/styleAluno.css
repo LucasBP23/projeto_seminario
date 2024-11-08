@@ -54,10 +54,10 @@ header {
     height: 3px;
     background: #fff;
     border-radius: 5px;
-    transform-origin: right;/*O traço vem da direita quando passa o cursor*/
-    transform: scaleX(0); /*Esse tira os traços??*/
+    transform-origin: right;
+    transform: scaleX(0); 
     transition: transform .5s;
-} /*Coloca um traço branco embaixo do títulos*/
+} 
 
 .navigation a:hover::after {
     transform-origin: left;/*O traço sai da esquerda quando tira o cursor*/
@@ -76,13 +76,13 @@ header {
     color: #fff;
     font-weight: 500;
     margin-left: 40px;
-    transition: .5s; /*devido ao hover abaixo*/
+    transition: .5s; 
 }
 
 .navigation .btnLogin-popup:hover {
     background: #fff;
     color: #162938; 
-} /*Muda de cor quando passa o cursor por cima do entrar*/
+} 
 
 
 /* FUNDO DA AREA DE LOGIN */
@@ -92,7 +92,7 @@ header {
     height: 440px;
     background: transparent;
     border: 2px solid rgba(255, 255, 255, .5);
-    border-radius: 20px; /*deixa rendondo as bordas*/
+    border-radius: 20px; 
     backdrop-filter: blur(20px); /* deixa embaçado*/
     box-shadow: 0 0 30px rgba(0, 0, 0, .5);
     display: flex;
@@ -106,7 +106,7 @@ header {
     padding: 40px;
 }
 
-/*Botão de X*/
+
 
 .form-box h2 {
     font-size: 2em;
@@ -176,7 +176,7 @@ header {
     font-weight: 500;
 }
 
-/* Registre-se*/
+
 .sem_conta {
     font-size: .9em;
     color: #8AC2CE;
@@ -185,7 +185,6 @@ header {
     margin: 25px 0 10px;
 }
 
-/*Cadastra-se*/
 .sem_conta p{
     color: #8AC2CE;
     font-weight: 600;

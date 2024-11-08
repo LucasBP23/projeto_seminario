@@ -1,3 +1,5 @@
+<!-- DELETA UM CURSO SELECIONADO -->
+
 <?php 
 
     if(!empty($_GET['id_curso'])) // Se não estiver vazio minha variavel/meu parametro id

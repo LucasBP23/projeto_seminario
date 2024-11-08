@@ -1,3 +1,5 @@
+// API VIA CEP
+
 document.getElementById("aluno_cep").addEventListener("blur", function() {
     let cep = this.value.replace(/\D/g, '');
     if (cep.length === 8) {

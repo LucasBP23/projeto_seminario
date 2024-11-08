@@ -1,3 +1,5 @@
+<!-- SALVA AS ALTERAÇÕES DOS DADOS DA SECRETARIA -->
+
 <?php 
 
 include_once('../../config.php');

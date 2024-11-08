@@ -1,3 +1,5 @@
+<!-- PAGINA DA SECRETARIA -->
+
 <?php 
     session_start();
     include_once('../config.php');
@@ -23,7 +25,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Document</title>
+    <title>Página da secretaria</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="../images/UniSGE.png"> <!--Coloca o logo no topo da guia da página-->
     
@@ -55,8 +57,7 @@
 
 <div>
     <div class="menu">
-        <!-- <label for="Cad_aluno">Cadastrar aluno</label>
-        <input type="text"> -->
+        
         <br> <a href="secretaria/pagina_inicial.html" target="iframe-menu"> <ion-icon name="home-sharp"></ion-icon>  Página inicial </a>
         <br>
         <hr>
@@ -102,12 +103,7 @@
         <a href="matricular_aluno/gerenciar_alunos_turma.php" target="iframe-menu">&#x270F; Editar matrícula aluno</a>
         <br>
         
-        <!-- <hr>
-        <a href="#" target="iframe-menu"> Emitir histórico</a>
-        <br>
-        <hr>  -->
-
-
+       
     </div>
 
 
@@ -120,10 +116,7 @@
 
 </div>
 
-<!-- 
-<button onclick="javascript:window.location.href='index.html'"> &#x2B05; Voltar</button> Em HTML para usar os simbolos usa primeiro &#x e depois coloca o código e no fim coloca ponto e virgula-->
 
-<!-- //CRIAR UM FOOTER -->
 
 
 <!--código para inserir icones do seguinte site: https://ionic.io/ionicons/usage-->

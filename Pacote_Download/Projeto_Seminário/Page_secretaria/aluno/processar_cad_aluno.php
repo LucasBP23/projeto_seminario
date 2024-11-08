@@ -1,3 +1,5 @@
+<!-- PROCESSA OS DADOS DE CADASTRO DO ALUNO -->
+
 <?php 
 
 session_start(); 
@@ -5,10 +7,8 @@ session_start();
 
 
     if(isset($_POST['submit'])) // Se houver uma váriavel submit ele vai salvar os dados
-    // primeiro tem que verificar um por um:
+  
     {
-
-    
       //Incluindo a conexão com o arquivo config.php que faz conexão com o banco de dados
       include_once('../../config.php');
 
@@ -56,14 +56,19 @@ $id_instituicao = $_SESSION['id_instituicao'];
   // print_r("<br>");
   // print_r('CPF: ' . $_POST['aluno_cpf']);
   // print_r("<br>");
+   // print_r('CEP: ' . $_POST['aluno_cep']);
+  // print_r("<br>");
   // print_r('Estado: ' . $_POST['aluno_estado']);
   // print_r("<br>");
   // print_r('Cidade: ' . $_POST['aluno_cidade']);
   // print_r("<br>");
   // print_r('Endereço: ' . $_POST['aluno_logradouro']);
   // print_r("<br>");
+  // print_r('Bairro: ' . $_POST['aluno_bairro']);
+  // print_r("<br>");
+  // print_r('Número: ' . $_POST['aluno_numero']);
+  // print_r("<br>");
   // print_r('Matrícula: ' . $aluno_matricula);
- 
   // print_r("<br>");
   // print_r('Senha: ' . $aluno_senha);
   // print_r("<br>");
@@ -78,16 +83,15 @@ if (mysqli_num_rows($resultado) > 0) {
             window.location='cad_aluno.php';
           </script>";
 } else {
-// $conexao é do arquivo config.php, depois fical igual ao insert into do banco de dados, primeiro o comando, depois a tabela, depois as colunas, depois os valores.
+// $conexao é do arquivo config.php
 $query = "INSERT INTO aluno (aluno_nome_completo, aluno_data_nascimento, aluno_cpf, aluno_cep, aluno_estado, aluno_cidade, aluno_logradouro, aluno_bairro, aluno_numero, aluno_matricula, aluno_senha_acesso, id_instituicao) VALUES ('$aluno_nome_completo', '$aluno_data_nascimento', '$aluno_cpf', '$aluno_cep', '$aluno_estado', '$aluno_cidade', '$aluno_logradouro', '$aluno_bairro', '$aluno_numero', '$aluno_matricula', '$aluno_senha_hash', '$id_instituicao')";
 
 
 //  // Verificar se o aluno foi inserido corretamente
 if (mysqli_query($conexao, $query)) {
-    // echo "<script>alert('Usuário não encontrado.');</script>"; // Mensagem de erro
+    
     echo "<script>alert('Aluno(a) cadastrado com sucesso! Matrícula: $aluno_matricula, Senha: $aluno_senha'); window.location='cad_aluno.php'</script>";
-//     // Redirecionar para uma página, se necessário
-//     // header("Location: listar_alunos.php");
+
 } else {
     echo "<script>alert('Erro ao cadastrar o(a) aluno(a): " . mysqli_error($conexao). " '); window.location='cad_aluno.php'</script>";
 

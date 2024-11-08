@@ -1,3 +1,5 @@
+<!-- FORMULÁRIO PARA EDITAR OS DADOS DA SECRETARIA -->
+
 <?php 
 
     if(!empty($_GET['id_instituicao'])) // Se não estiver vazio minha variavel/meu parametro id
@@ -24,7 +26,7 @@
             $instituicao_nome = $user_data['instituicao_nome'];
             $instituicao_email = $user_data['instituicao_email'];
             $instituicao_telefone = $user_data['instituicao_telefone'];
-            // $instituicao_senha_acesso = $user_data['instituicao_senha_acesso'];
+            
         }
 
     }
@@ -56,7 +58,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Formulário para editar os dados da secretaria</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="icon" type="image/x-icon" href="Images/UniSGE-removebg-preview.png"> <!--Coloca o logo no topo da guia da página-->
     <link rel="stylesheet" href="editar_secretaria.css?v=1.4">
@@ -103,7 +105,7 @@
                  <br><br>
                     
 
-                    <!-- ficara escondido -->
+                    
                     <input type="hidden" name="id_instituicao" value="<?php echo $id_instituicao?>">
                     <input type="hidden" name="instituicao_senha_acesso" value="<?php echo $instituicao_senha_acesso?>">
                     <input type="submit" name="update" id="update" class="submit_form" value="Atualizar">

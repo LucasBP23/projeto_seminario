@@ -1,3 +1,5 @@
+<!-- PÁGINA PARA CADASTRO DE CURSO -->
+
 <?php
 session_start();
 include('../../config.php');
@@ -22,10 +24,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $resultado_verificacao = mysqli_query($conexao, $verifica_curso);
         
         if (mysqli_num_rows($resultado_verificacao) > 0) {
-            // Curso já existe, definir mensagem de erro
+            // Curso já existe, mensagem de erro
             echo "<script>alert('Curso já cadastrado para esta instituição!" . mysqli_error($conexao). " '); window.location='cad_curso.php'</script>";
         } else {
-               // Curso não existe, proceder com o cadastro
+               // Curso não existe, procede com o cadastro
 
         $sql = "INSERT INTO curso (nome_curso, descricao, id_instituicao) VALUES ('$nome_curso', '$descricao', $id_instituicao)";
         if (!mysqli_query($conexao, $sql)) {

@@ -1,3 +1,5 @@
+<!-- PERMITE EDITAR O NOME E A DESCRIÇÃO DO CURSO -->
+
 <?php
 session_start();
 include('../../config.php');
@@ -44,7 +46,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <meta charset="UTF-8">
     <title>Editar Curso</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="image/x-icon" href="../../images/UniSGE-removebg-preview.png"> <!--Coloca o logo no topo da guia da página-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>

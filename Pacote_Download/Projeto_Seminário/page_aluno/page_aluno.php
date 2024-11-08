@@ -1,3 +1,5 @@
+<!-- PÁGINA DO ALUNO, ONDE ELE CONSEGUE ESCOLHER UMA TURMA QUE ELE ESTÁ VINCULADO (QUANDO ELE ESTÁ EM MAIS DE UMA) E VERIFICA SUAS NOTAS -->
+
 <?php
 session_start();
 include_once('../config.php');

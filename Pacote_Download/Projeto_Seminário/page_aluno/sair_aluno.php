@@ -1,3 +1,4 @@
+<!-- FAZ O LOGOUT DA PÁGINA DO ALUNO -->
 
 <?php 
 session_start();

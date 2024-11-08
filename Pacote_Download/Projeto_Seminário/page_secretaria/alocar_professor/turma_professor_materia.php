@@ -1,3 +1,5 @@
+<!-- PERMITE ALOCAR PROFESSORES EM MATÉRIAS DE TURMAS ESPECÍFICAS -->
+
 <?php
 session_start();
 include('../../config.php');

@@ -38,8 +38,8 @@
                 // A senha está correta, armazena os dados da sessão
 
 
-                $_SESSION['instituicao_email'] =$instituicao_email; // assim que entrar no sistema ele vai criar as variasveis session email e session senha
-                // Armazenar o email e o id_instituicao na sessão
+                $_SESSION['instituicao_email'] =$instituicao_email; // assim que entrar no sistema ele vai criar as variasveis session
+                // Armazena o email, o id da instituicao e o nome da instituição na sessão
               $_SESSION['instituicao_email'] = $user_data['instituicao_email'];
               $_SESSION['id_instituicao'] = $user_data['id_instituicao'];  // Armazenar o id_instituicao da secretaria logada
               $_SESSION['instituicao_nome'] = $user_data['instituicao_nome']; 
@@ -48,8 +48,8 @@
                 exit(); 
             } else {
                 // Senha incorreta, ele não acessa e volta para a area de login.
-                unset($_SESSION['aluno_matricula']);
-                unset($_SESSION['aluno_senha_acesso']);
+                unset($_SESSION['instituicao_email']);
+                unset($_SESSION['instituicao_senha_acesso']);
                 header('Location: login_secretaria.html'); 
             }
         }
@@ -58,8 +58,8 @@
 <?php 
    
 } else {
-     // Caso os campos não estejam preenchidos, redireciona para a área de login do aluno
-    header('Location: login_aluno.html');
+     // Caso os campos não estejam preenchidos, redireciona para a área de login da secretaria
+    header('Location: login_secretaria.html');
    
 }
 ?>

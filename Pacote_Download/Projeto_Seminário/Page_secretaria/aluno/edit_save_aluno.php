@@ -1,3 +1,5 @@
+<!-- ATUALIZA OS DADOS DO ALUNO -->
+
 <?php 
 
 include_once('../../config.php');
@@ -15,9 +17,7 @@ if(isset($_POST['update']))
             $aluno_logradouro = addslashes($_POST['aluno_logradouro']);
             $aluno_bairro = addslashes($_POST['aluno_bairro']);
             $aluno_numero = addslashes($_POST['aluno_numero']);
-            // $aluno_matricula = str_pad(rand(0, 999999), 6, '0', STR_PAD_LEFT); // Gera matrícula aleatória
-            // $aluno_senha = gerarSenha();
-            // $aluno_senha_hash = password_hash($aluno_senha, PASSWORD_DEFAULT); // Hash da senha
+            
 
            
            

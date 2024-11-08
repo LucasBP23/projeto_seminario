@@ -26,7 +26,7 @@ body{
   text-align: left;
   align-items: center;
   padding-left: 10px;
-  line-height: 1px; /* Ajuste conforme necessário */
+  line-height: 1px; 
   color: rgb(255, 255, 255);
   flex: 1;
   height: 35PX;
@@ -41,19 +41,19 @@ body{
   text-align: right;
   flex: 1;
   margin-right: 30px;
-  /* margin-left: 1000px; */
+ 
   text-decoration: none;
 }
 
 .f_topo a{
   color: rgb(255, 255, 255);
-  /* display:flex; */
+  
   align-items: center;
   gap: 10px; /* Espaçamento entre os itens */
   text-align: right;
   /* flex: 1; */
   margin-right: 30px;
-  /* margin-left: 1000px; */
+
   text-decoration: none;
   border-bottom: 2px solid white;
 }
@@ -69,11 +69,11 @@ body{
     left: 0;
     width: 20%;
     height: calc(100% - 50px);
-    background-color: #d6dade; /* Cor de fundo opcional */
-    z-index: 1000; /* Certifique-se de que a div fique acima de outros elementos */
+    background-color: #d6dade; 
+    z-index: 1000; 
     border-right: 3px groove rgb(226, 217, 217);
     text-align: center;
-    /* margin-top: 50PX; */
+
     margin-top: 1px;
     float: left;
 
@@ -81,17 +81,14 @@ body{
 
 
   .menu a{
-    /* border: 3px solid black;
-    border-radius: 10px; */
-    /* padding: 5px; */
+   
     text-align: center;
-    /* margin-top: 50px;
-    padding: 20px; */
+   
     text-decoration: none;
     color:rgb(3, 3, 64);
     font-size: 17px ;
     font-family: "Afacad Flux", sans-serif;
-    /* font-weight: bold; */
+  
     font-weight: 600;
   }
 

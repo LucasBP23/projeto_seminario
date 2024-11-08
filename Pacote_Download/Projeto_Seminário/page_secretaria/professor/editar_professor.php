@@ -1,3 +1,5 @@
+<!-- FORMULÁRIO PARA EDITAR OS DADOS DO PROFESSOR -->
+
 <?php 
 
     if(!empty($_GET['id_professor'])) // Se não estiver vazio minha variavel/meu parametro id
@@ -31,7 +33,6 @@
             $professor_bairro = $user_data['professor_bairro'];
             $professor_numero =  $user_data['professor_numero'];
             
-            // $professor_senha = $user_data['professor_senha'];
        
            
         }
@@ -60,7 +61,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Formulário para editar os dados do professor</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="icon" type="image/x-icon" href="Images/UniSGE-removebg-preview.png"> <!--Coloca o logo no topo da guia da página-->
     <link rel="stylesheet" href="editar_professor.css?v=1.3">

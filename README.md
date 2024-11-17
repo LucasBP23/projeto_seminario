@@ -236,7 +236,7 @@ A aplicação é de fácil utilização e pode ser integrada em diversos context
 - *Exemplo de Exibição*: 
 
 | Turma  | Matéria | Professor | CPF do professor | Ações |
-|----------------|--------------------|---------------|
+|----------------|--------------------|---------------|---------------|---------------|
 | 1° ano A 2024 | Português | Enrico Sérgio Nicolas Cardoso | 986.659.417-38 | Editar ou excluir |
 
 

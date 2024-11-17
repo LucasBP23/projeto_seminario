@@ -269,7 +269,7 @@ A aplicação é de fácil utilização e pode ser integrada em diversos context
 - *Exemplo de Exibição*: 
 
 | Matrícula  | Nome do aluno | CPF do aluno | Ação | Transferência |
-|----------------|--------------------|---------------|
+|----------------|--------------------|---------------|---------------|---------------|
 | 155387 | Emily Helena Alves| 162.376.877-26 | Excluir | Opção de selecionar uma turma do mesmo curso e transferir|
 
 
@@ -321,7 +321,7 @@ Matrícula do aluno - nome do aluno
 155387 - Emily Helena Alves
 
 | Nota 1 | Nota 2 | Nota 3 | Nota 4| Média | Situação  | Ações |
-|----------------|--------------------|---------------|
+|----------------|--------------------|---------------|---------------|---------------|---------------|---------------|
 | 10 | 10 | 10 | 9 | 9.75 | Aprovado | Atualizar notas |
 
 

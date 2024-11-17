@@ -369,7 +369,7 @@ Página do aluno
 
 
 | Matéria | Professor | Nota 1 | Nota 2 | Nota 3 | Nota 4 | Média | Situação |
-|----------------|--------------------|---------------|
+|----------------|--------------------|---------------|---------------|---------------|---------------|---------------|---------------|
 | Matemática | Heitor Diego Cavalcanti | 10 | 10 | 10 | 10| 10| Aprovado |
 
 ## Perfil linkedin do grupo
